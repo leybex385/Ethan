@@ -1,12 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ethan Huang | Founder & Chief Investment Officer</title>
+
+    <!-- Favicon -->
+    <link rel="icon" id="favicon" type="image/png" href="images/favicon_base.png">
+
+    <!-- Open Graph / Social Media Preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ethanhuang.com/">
+    <meta property="og:title" content="Ethan Huang | Founder & Chief Investment Officer">
+    <meta property="og:description"
+        content="Over three decades of experience in global asset management, risk management, and strategic investment advisory. Bridge figure connecting traditional finance and crypto.">
+    <meta property="og:image" content="images/og_preview.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://ethanhuang.com/">
+    <meta property="twitter:title" content="Ethan Huang | Founder & Chief Investment Officer">
+    <meta property="twitter:description"
+        content="Over three decades of experience in global asset management, risk management, and strategic investment advisory.">
+    <meta property="twitter:image" content="images/og_preview.png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -24,8 +47,8 @@
             --text-muted: #94a3b8;
             --gradient-dark: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #334155 100%);
             --gradient-gold: linear-gradient(135deg, #c9a962 0%, #f0d78c 50%, #c9a962 100%);
-            --gradient-card: linear-gradient(145deg, rgba(30,58,95,0.4) 0%, rgba(15,23,42,0.6) 100%);
-            --glow-gold: 0 0 40px rgba(201,169,98,0.3);
+            --gradient-card: linear-gradient(145deg, rgba(30, 58, 95, 0.4) 0%, rgba(15, 23, 42, 0.6) 100%);
+            --glow-gold: 0 0 40px rgba(201, 169, 98, 0.3);
         }
 
         html {
@@ -56,14 +79,14 @@
             padding: 1.5rem 0;
             background: rgba(15, 23, 42, 0.95);
             backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             transition: all 0.3s ease;
         }
 
         nav.scrolled {
             padding: 1rem 0;
             background: rgba(15, 23, 42, 0.98);
-            box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
         }
 
         .nav-content {
@@ -142,8 +165,8 @@
             position: relative;
             overflow: hidden;
             padding-top: 80px;
-            background: linear-gradient(135deg, rgba(15,23,42,0.95) 0%, rgba(30,58,95,0.9) 100%),
-                        url('https://image.qwenlm.ai/public_source/32f357c9-d67e-416f-9ad3-ed287c1facc4/113f98b38-947e-4119-90e1-19ac9784fd76.png') center/cover fixed;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 58, 95, 0.9) 100%),
+                url('https://image.qwenlm.ai/public_source/32f357c9-d67e-416f-9ad3-ed287c1facc4/113f98b38-947e-4119-90e1-19ac9784fd76.png') center/cover fixed;
         }
 
         .hero::before {
@@ -153,8 +176,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(ellipse at 30% 50%, rgba(201,169,98,0.08) 0%, transparent 50%),
-                        radial-gradient(ellipse at 70% 50%, rgba(30,58,95,0.15) 0%, transparent 50%);
+            background: radial-gradient(ellipse at 30% 50%, rgba(201, 169, 98, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 50%, rgba(30, 58, 95, 0.15) 0%, transparent 50%);
             z-index: 0;
         }
 
@@ -191,7 +214,7 @@
             left: -20px;
             right: 20px;
             bottom: 20px;
-            border: 2px solid rgba(201,169,98,0.3);
+            border: 2px solid rgba(201, 169, 98, 0.3);
             border-radius: 4px;
             z-index: -1;
             animation: borderPulse 3s infinite;
@@ -200,14 +223,14 @@
         .hero-image img {
             width: 100%;
             border-radius: 4px;
-            box-shadow: 0 40px 80px rgba(0,0,0,0.4), 0 0 60px rgba(201,169,98,0.1);
-            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4), 0 0 60px rgba(201, 169, 98, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.5s ease;
         }
 
         .hero-image img:hover {
             transform: scale(1.02);
-            box-shadow: 0 50px 100px rgba(0,0,0,0.5), 0 0 80px rgba(201,169,98,0.2);
+            box-shadow: 0 50px 100px rgba(0, 0, 0, 0.5), 0 0 80px rgba(201, 169, 98, 0.2);
         }
 
         .hero-subtitle {
@@ -257,10 +280,10 @@
             gap: 0.5rem;
             color: var(--text-muted);
             font-size: 0.85rem;
-            background: rgba(255,255,255,0.05);
+            background: rgba(255, 255, 255, 0.05);
             padding: 0.5rem 1rem;
             border-radius: 4px;
-            border: 1px solid rgba(255,255,255,0.05);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .hero-info-item span {
@@ -297,18 +320,18 @@
         .btn-primary {
             background: var(--gradient-gold);
             color: var(--primary-dark);
-            box-shadow: 0 4px 15px rgba(201,169,98,0.3);
+            box-shadow: 0 4px 15px rgba(201, 169, 98, 0.3);
         }
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(201,169,98,0.4);
+            box-shadow: 0 8px 25px rgba(201, 169, 98, 0.4);
         }
 
         .btn-outline {
             background: transparent;
             color: var(--text-light);
-            border: 1px solid rgba(255,255,255,0.3);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .btn-outline:hover {
@@ -371,7 +394,7 @@
             left: 0;
             right: 0;
             height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(201,169,98,0.3), transparent);
+            background: linear-gradient(90deg, transparent, rgba(201, 169, 98, 0.3), transparent);
         }
 
         .about-grid {
@@ -388,8 +411,8 @@
         .about-image img {
             width: 100%;
             border-radius: 4px;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.4);
-            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .about-image::before {
@@ -399,7 +422,7 @@
             left: -15px;
             right: 15px;
             bottom: 15px;
-            border: 2px solid rgba(201,169,98,0.2);
+            border: 2px solid rgba(201, 169, 98, 0.2);
             border-radius: 4px;
             z-index: -1;
         }
@@ -427,8 +450,8 @@
 
         .about-detail-item {
             padding: 1rem;
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.05);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: 4px;
         }
 
@@ -456,7 +479,7 @@
 
         .stat-card {
             background: var(--gradient-card);
-            border: 1px solid rgba(201,169,98,0.15);
+            border: 1px solid rgba(201, 169, 98, 0.15);
             border-radius: 8px;
             padding: 2rem;
             text-align: center;
@@ -465,8 +488,8 @@
 
         .stat-card:hover {
             transform: translateY(-5px);
-            border-color: rgba(201,169,98,0.4);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3), var(--glow-gold);
+            border-color: rgba(201, 169, 98, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), var(--glow-gold);
         }
 
         .stat-number {
@@ -508,8 +531,8 @@
             transform: translateX(-50%);
             width: 3px;
             height: 100%;
-            background: linear-gradient(180deg, rgba(201,169,98,0) 0%, rgba(201,169,98,0.6) 10%, rgba(201,169,98,0.6) 90%, rgba(201,169,98,0) 100%);
-            box-shadow: 0 0 20px rgba(201,169,98,0.3);
+            background: linear-gradient(180deg, rgba(201, 169, 98, 0) 0%, rgba(201, 169, 98, 0.6) 10%, rgba(201, 169, 98, 0.6) 90%, rgba(201, 169, 98, 0) 100%);
+            box-shadow: 0 0 20px rgba(201, 169, 98, 0.3);
         }
 
         .timeline-item {
@@ -543,7 +566,7 @@
         .timeline-item-content {
             width: 48%;
             background: var(--gradient-card);
-            border: 1px solid rgba(201,169,98,0.2);
+            border: 1px solid rgba(201, 169, 98, 0.2);
             border-radius: 12px;
             overflow: hidden;
             transition: all 0.4s ease;
@@ -563,8 +586,8 @@
         }
 
         .timeline-item:hover .timeline-item-content {
-            border-color: rgba(201,169,98,0.5);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.4), var(--glow-gold);
+            border-color: rgba(201, 169, 98, 0.5);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), var(--glow-gold);
             transform: translateY(-5px);
         }
 
@@ -605,14 +628,14 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(180deg, transparent 0%, rgba(15,23,42,0.9) 100%);
+            background: linear-gradient(180deg, transparent 0%, rgba(15, 23, 42, 0.9) 100%);
         }
 
         .timeline-item-badge {
             position: absolute;
             top: 1rem;
             left: 1rem;
-            background: rgba(201,169,98,0.95);
+            background: rgba(201, 169, 98, 0.95);
             color: var(--primary-dark);
             padding: 0.4rem 1rem;
             border-radius: 20px;
@@ -635,10 +658,10 @@
             font-weight: 600;
             letter-spacing: 2px;
             margin-bottom: 0.8rem;
-            background: rgba(201,169,98,0.1);
+            background: rgba(201, 169, 98, 0.1);
             padding: 0.4rem 1rem;
             border-radius: 20px;
-            border: 1px solid rgba(201,169,98,0.2);
+            border: 1px solid rgba(201, 169, 98, 0.2);
         }
 
         .timeline-title {
@@ -684,14 +707,14 @@
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
-            box-shadow: 0 0 30px rgba(201,169,98,0.8);
+            box-shadow: 0 0 30px rgba(201, 169, 98, 0.8);
             z-index: 2;
             transition: all 0.3s ease;
         }
 
         .timeline-item:hover .timeline-dot {
             transform: translateX(-50%) scale(1.4);
-            box-shadow: 0 0 50px rgba(201,169,98,1);
+            box-shadow: 0 0 50px rgba(201, 169, 98, 1);
         }
 
         .timeline-dot::before {
@@ -702,16 +725,19 @@
             transform: translate(-50%, -50%);
             width: 40px;
             height: 40px;
-            border: 2px solid rgba(201,169,98,0.3);
+            border: 2px solid rgba(201, 169, 98, 0.3);
             border-radius: 50%;
             animation: pulse 2s infinite;
         }
 
         @keyframes pulse {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translate(-50%, -50%) scale(1);
                 opacity: 1;
             }
+
             50% {
                 transform: translate(-50%, -50%) scale(1.5);
                 opacity: 0;
@@ -731,7 +757,7 @@
             left: 0;
             right: 0;
             height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(201,169,98,0.3), transparent);
+            background: linear-gradient(90deg, transparent, rgba(201, 169, 98, 0.3), transparent);
         }
 
         .philosophy-grid {
@@ -742,7 +768,7 @@
 
         .philosophy-card {
             background: var(--gradient-card);
-            border: 1px solid rgba(201,169,98,0.2);
+            border: 1px solid rgba(201, 169, 98, 0.2);
             border-radius: 12px;
             padding: 3rem 2.5rem;
             transition: all 0.4s ease;
@@ -766,8 +792,8 @@
 
         .philosophy-card:hover {
             transform: translateY(-15px);
-            border-color: rgba(201,169,98,0.5);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.4), var(--glow-gold);
+            border-color: rgba(201, 169, 98, 0.5);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), var(--glow-gold);
         }
 
         .philosophy-card:hover::before {
@@ -778,21 +804,21 @@
             width: 100px;
             height: 100px;
             margin: 0 auto 2rem;
-            background: rgba(201,169,98,0.1);
+            background: rgba(201, 169, 98, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 2px solid rgba(201,169,98,0.2);
+            border: 2px solid rgba(201, 169, 98, 0.2);
             transition: all 0.4s ease;
             position: relative;
         }
 
         .philosophy-card:hover .philosophy-icon-wrapper {
-            background: rgba(201,169,98,0.2);
-            border-color: rgba(201,169,98,0.5);
+            background: rgba(201, 169, 98, 0.2);
+            border-color: rgba(201, 169, 98, 0.5);
             transform: scale(1.1);
-            box-shadow: 0 0 40px rgba(201,169,98,0.3);
+            box-shadow: 0 0 40px rgba(201, 169, 98, 0.3);
         }
 
         .philosophy-icon {
@@ -847,8 +873,8 @@
             max-width: 800px;
             margin: 4rem auto 0;
             padding: 3rem;
-            background: rgba(201,169,98,0.05);
-            border: 1px solid rgba(201,169,98,0.15);
+            background: rgba(201, 169, 98, 0.05);
+            border: 1px solid rgba(201, 169, 98, 0.15);
             border-radius: 12px;
             position: relative;
         }
@@ -860,7 +886,7 @@
             left: 2.5rem;
             font-family: 'Playfair Display', serif;
             font-size: 6rem;
-            color: rgba(201,169,98,0.1);
+            color: rgba(201, 169, 98, 0.1);
             line-height: 1;
         }
 
@@ -910,7 +936,7 @@
 
         .philosophy-modal-content {
             background: var(--gradient-card);
-            border: 1px solid rgba(201,169,98,0.3);
+            border: 1px solid rgba(201, 169, 98, 0.3);
             border-radius: 16px;
             max-width: 800px;
             width: 100%;
@@ -919,7 +945,7 @@
             transform: scale(0.9) translateY(50px);
             transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
-            box-shadow: 0 40px 100px rgba(0,0,0,0.5);
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
         }
 
         .philosophy-modal-overlay.active .philosophy-modal-content {
@@ -932,8 +958,8 @@
             right: 1.5rem;
             width: 45px;
             height: 45px;
-            background: rgba(201,169,98,0.15);
-            border: 1px solid rgba(201,169,98,0.3);
+            background: rgba(201, 169, 98, 0.15);
+            border: 1px solid rgba(201, 169, 98, 0.3);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -954,19 +980,19 @@
         .philosophy-modal-header {
             padding: 3rem 3rem 2rem;
             text-align: center;
-            border-bottom: 1px solid rgba(201,169,98,0.15);
+            border-bottom: 1px solid rgba(201, 169, 98, 0.15);
         }
 
         .philosophy-modal-icon {
             width: 80px;
             height: 80px;
             margin: 0 auto 1.5rem;
-            background: rgba(201,169,98,0.1);
+            background: rgba(201, 169, 98, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 2px solid rgba(201,169,98,0.3);
+            border: 2px solid rgba(201, 169, 98, 0.3);
         }
 
         .philosophy-modal-icon svg {
@@ -1010,7 +1036,7 @@
             text-transform: uppercase;
             margin-bottom: 1rem;
             padding-bottom: 0.5rem;
-            border-bottom: 1px solid rgba(201,169,98,0.2);
+            border-bottom: 1px solid rgba(201, 169, 98, 0.2);
         }
 
         .philosophy-modal-text {
@@ -1043,7 +1069,7 @@
         }
 
         .philosophy-modal-quote {
-            background: rgba(201,169,98,0.08);
+            background: rgba(201, 169, 98, 0.08);
             border-left: 4px solid var(--accent-gold);
             padding: 1.5rem 2rem;
             border-radius: 0 8px 8px 0;
@@ -1071,7 +1097,7 @@
 
         .expertise-item {
             background: var(--gradient-card);
-            border: 1px solid rgba(201,169,98,0.2);
+            border: 1px solid rgba(201, 169, 98, 0.2);
             border-radius: 12px;
             overflow: hidden;
             transition: all 0.4s ease;
@@ -1080,8 +1106,8 @@
         }
 
         .expertise-item:hover {
-            border-color: rgba(201,169,98,0.5);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.4), var(--glow-gold);
+            border-color: rgba(201, 169, 98, 0.5);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), var(--glow-gold);
             transform: translateY(-5px);
         }
 
@@ -1126,7 +1152,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(180deg, transparent 0%, rgba(15,23,42,0.95) 100%);
+            background: linear-gradient(180deg, transparent 0%, rgba(15, 23, 42, 0.95) 100%);
         }
 
         .expertise-item-number {
@@ -1199,7 +1225,7 @@
             left: 0;
             right: 0;
             height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(201,169,98,0.3), transparent);
+            background: linear-gradient(90deg, transparent, rgba(201, 169, 98, 0.3), transparent);
         }
 
         .impact-grid {
@@ -1210,15 +1236,15 @@
 
         .impact-card {
             background: var(--gradient-card);
-            border: 1px solid rgba(201,169,98,0.15);
+            border: 1px solid rgba(201, 169, 98, 0.15);
             border-radius: 8px;
             padding: 2.5rem;
             transition: all 0.3s ease;
         }
 
         .impact-card:hover {
-            border-color: rgba(201,169,98,0.4);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3), var(--glow-gold);
+            border-color: rgba(201, 169, 98, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), var(--glow-gold);
             transform: translateY(-5px);
         }
 
@@ -1276,16 +1302,16 @@
             text-align: center;
             padding: 2.5rem;
             background: var(--gradient-card);
-            border: 1px solid rgba(201,169,98,0.15);
+            border: 1px solid rgba(201, 169, 98, 0.15);
             border-radius: 8px;
             transition: all 0.3s ease;
             cursor: pointer;
         }
 
         .contribution-card:hover {
-            border-color: rgba(201,169,98,0.4);
+            border-color: rgba(201, 169, 98, 0.4);
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3), var(--glow-gold);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), var(--glow-gold);
         }
 
         .contribution-card::before {
@@ -1341,7 +1367,7 @@
             left: 0;
             right: 0;
             height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(201,169,98,0.3), transparent);
+            background: linear-gradient(90deg, transparent, rgba(201, 169, 98, 0.3), transparent);
         }
 
         .contact-container {
@@ -1363,7 +1389,7 @@
             line-height: 1.3;
         }
 
-        .contact-info > p {
+        .contact-info>p {
             color: var(--text-muted);
             margin-bottom: 2.5rem;
             line-height: 1.8;
@@ -1382,23 +1408,23 @@
             align-items: flex-start;
             gap: 1.2rem;
             padding: 1.2rem;
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.05);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: 8px;
             transition: all 0.3s ease;
             cursor: pointer;
         }
 
         .contact-method:hover {
-            background: rgba(255,255,255,0.05);
-            border-color: rgba(201,169,98,0.3);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(201, 169, 98, 0.3);
             transform: translateX(5px);
         }
 
         .contact-method-icon {
             width: 50px;
             height: 50px;
-            background: rgba(201,169,98,0.15);
+            background: rgba(201, 169, 98, 0.15);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -1457,7 +1483,7 @@
             text-transform: uppercase;
             margin-bottom: 1.5rem;
             padding-bottom: 0.5rem;
-            border-bottom: 1px solid rgba(201,169,98,0.2);
+            border-bottom: 1px solid rgba(201, 169, 98, 0.2);
         }
 
         .location-cards {
@@ -1467,8 +1493,8 @@
         }
 
         .location-card {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.05);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: 8px;
             padding: 1.5rem 1rem;
             text-align: center;
@@ -1477,8 +1503,8 @@
         }
 
         .location-card:hover {
-            background: rgba(201,169,98,0.1);
-            border-color: rgba(201,169,98,0.3);
+            background: rgba(201, 169, 98, 0.1);
+            border-color: rgba(201, 169, 98, 0.3);
             transform: translateY(-3px);
         }
 
@@ -1504,8 +1530,8 @@
         .availability-section {
             margin-top: 2rem;
             padding: 1.5rem;
-            background: rgba(201,169,98,0.05);
-            border: 1px solid rgba(201,169,98,0.15);
+            background: rgba(201, 169, 98, 0.05);
+            border: 1px solid rgba(201, 169, 98, 0.15);
             border-radius: 8px;
         }
 
@@ -1548,7 +1574,7 @@
         /* Contact Form */
         .contact-form-wrapper {
             background: var(--gradient-card);
-            border: 1px solid rgba(201,169,98,0.2);
+            border: 1px solid rgba(201, 169, 98, 0.2);
             border-radius: 12px;
             padding: 3rem;
             position: relative;
@@ -1609,8 +1635,8 @@
         .form-group textarea,
         .form-group select {
             padding: 1rem;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 4px;
             color: var(--text-light);
             font-family: 'Inter', sans-serif;
@@ -1623,8 +1649,8 @@
         .form-group select:focus {
             outline: none;
             border-color: var(--accent-gold);
-            background: rgba(255,255,255,0.08);
-            box-shadow: 0 0 20px rgba(201,169,98,0.1);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 20px rgba(201, 169, 98, 0.1);
         }
 
         .form-group textarea {
@@ -1668,7 +1694,7 @@
             width: 80px;
             height: 80px;
             margin: 0 auto 1.5rem;
-            background: rgba(201,169,98,0.15);
+            background: rgba(201, 169, 98, 0.15);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -1692,7 +1718,7 @@
         }
 
         .form-success-email {
-            background: rgba(201,169,98,0.1);
+            background: rgba(201, 169, 98, 0.1);
             padding: 1rem;
             border-radius: 4px;
             color: var(--accent-gold);
@@ -1702,19 +1728,19 @@
 
         .form-success .btn {
             background: transparent;
-            border: 1px solid rgba(201,169,98,0.3);
+            border: 1px solid rgba(201, 169, 98, 0.3);
             color: var(--accent-gold);
         }
 
         .form-success .btn:hover {
-            background: rgba(201,169,98,0.1);
+            background: rgba(201, 169, 98, 0.1);
         }
 
         /* Footer */
         footer {
             background: var(--primary-dark);
             padding: 3rem 0;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .footer-content {
@@ -1755,23 +1781,53 @@
 
         /* Animations */
         @keyframes fadeInLeft {
-            from { opacity: 0; transform: translateX(-50px); }
-            to { opacity: 1; transform: translateX(0); }
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
 
         @keyframes fadeInRight {
-            from { opacity: 0; transform: translateX(50px); }
-            to { opacity: 1; transform: translateX(0); }
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
 
         @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         @keyframes borderPulse {
-            0%, 100% { opacity: 0.3; transform: scale(1); }
-            50% { opacity: 0.6; transform: scale(1.02); }
+
+            0%,
+            100% {
+                opacity: 0.3;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.6;
+                transform: scale(1.02);
+            }
         }
 
         /* Scroll Progress */
@@ -1788,6 +1844,7 @@
 
         /* Responsive */
         @media (max-width: 968px) {
+
             .hero-content,
             .about-grid,
             .contact-container {
@@ -1869,6 +1926,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Scroll Progress -->
     <div class="scroll-progress" id="scrollProgress"></div>
@@ -1900,8 +1958,8 @@
                     <div class="hero-info-item"><span>🇸</span> Singaporean</div>
                 </div>
                 <p class="hero-description">
-                    A bridge figure connecting traditional finance and the crypto world. 
-                    Over three decades of experience in global asset management, risk management, 
+                    A bridge figure connecting traditional finance and the crypto world.
+                    Over three decades of experience in global asset management, risk management,
                     and strategic investment advisory across Asia, Europe, and North America.
                 </p>
                 <div class="hero-cta">
@@ -1911,7 +1969,7 @@
             </div>
             <div class="hero-image">
                 <div class="hero-image-wrapper">
-                    <img src="https://image.qwenlm.ai/public_source/32f357c9-d67e-416f-9ad3-ed287c1facc4/161459856-a36b-492c-b2b4-b1d73afc694e.png" alt="Ethan Huang">
+                    <img src="images/profile3.jpg" alt="Ethan Huang">
                 </div>
             </div>
         </div>
@@ -1926,26 +1984,27 @@
             </div>
             <div class="about-grid">
                 <div class="about-image">
-                    <img src="https://image.qwenlm.ai/public_source/32f357c9-d67e-416f-9ad3-ed287c1facc4/1d0c76ea1-484b-4c45-b483-cd7747513057.png" alt="Executive Office">
+                    <img src="https://image.qwenlm.ai/public_source/32f357c9-d67e-416f-9ad3-ed287c1facc4/1d0c76ea1-484b-4c45-b483-cd7747513057.png"
+                        alt="Executive Office">
                 </div>
                 <div class="about-content">
                     <h3>Building Wealth Through Discipline & Long-Term Vision</h3>
                     <p>
-                        Born into a middle-class family in Singapore that placed a strong emphasis on 
-                        education, I developed an early interest in capital flows, risk management, 
-                        and macroeconomics during Singapore's emergence as an international financial 
+                        Born into a middle-class family in Singapore that placed a strong emphasis on
+                        education, I developed an early interest in capital flows, risk management,
+                        and macroeconomics during Singapore's emergence as an international financial
                         hub in the early 1990s.
                     </p>
                     <p>
-                        In 1989, I enrolled at Nanyang Technological University (NTU), majoring in 
-                        Engineering and Applied Mathematics. During my university years, I demonstrated 
-                        a strong interest in quantitative analysis, system modeling, and uncertainty 
-                        analysis, which later became the foundation of my expertise in risk management 
+                        In 1989, I enrolled at Nanyang Technological University (NTU), majoring in
+                        Engineering and Applied Mathematics. During my university years, I demonstrated
+                        a strong interest in quantitative analysis, system modeling, and uncertainty
+                        analysis, which later became the foundation of my expertise in risk management
                         and asset allocation.
                     </p>
                     <p>
-                        After graduation, rather than pursuing an academic career, I chose to enter 
-                        the financial industry directly to understand "real-world risk" from the 
+                        After graduation, rather than pursuing an academic career, I chose to enter
+                        the financial industry directly to understand "real-world risk" from the
                         market itself.
                     </p>
                     <div class="about-details">
@@ -1998,20 +2057,21 @@
             </div>
             <div class="timeline-container">
                 <div class="timeline-line"></div>
-                
+
                 <!-- Item 1 -->
                 <div class="timeline-item" onclick="openTimelineModal(0)">
                     <div class="timeline-dot"></div>
                     <div class="timeline-item-content">
                         <div class="timeline-item-image">
-                            <img src="https://image.qwenlm.ai/public_source/32f357c9-d67e-416f-9ad3-ed287c1facc4/1975901ad-89b4-41af-8997-5549ed51c0d9.png" alt="NTU Campus">
+                            <img src="https://image.qwenlm.ai/public_source/32f357c9-d67e-416f-9ad3-ed287c1facc4/1975901ad-89b4-41af-8997-5549ed51c0d9.png"
+                                alt="NTU Campus">
                             <span class="timeline-item-badge">Education</span>
                         </div>
                         <div class="timeline-item-body">
                             <span class="timeline-year">1989 - 1993</span>
                             <h3 class="timeline-title">Education Foundation</h3>
                             <p class="timeline-description">
-                                Nanyang Technological University, Singapore. Engineering and Applied 
+                                Nanyang Technological University, Singapore. Engineering and Applied
                                 Mathematics with focus on quantitative analysis and system modeling.
                             </p>
                             <span class="timeline-cta">Click to view details <span>→</span></span>
@@ -2024,14 +2084,15 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-item-content">
                         <div class="timeline-item-image">
-                            <img src="https://image.qwenlm.ai/public_source/32f357c9-d67e-416f-9ad3-ed287c1facc4/1f6d42b92-fea5-4148-b498-7cffc9dff69d.png" alt="J.P. Morgan Office">
+                            <img src="https://image.qwenlm.ai/public_source/32f357c9-d67e-416f-9ad3-ed287c1facc4/1f6d42b92-fea5-4148-b498-7cffc9dff69d.png"
+                                alt="J.P. Morgan Office">
                             <span class="timeline-item-badge">Investment Banking</span>
                         </div>
                         <div class="timeline-item-body">
                             <span class="timeline-year">1993 - 2000</span>
                             <h3 class="timeline-title">J.P. Morgan (Asia-Pacific)</h3>
                             <p class="timeline-description">
-                                Fixed income and interest rate derivatives division. Risk assessment 
+                                Fixed income and interest rate derivatives division. Risk assessment
                                 and portfolio measurement for institutional clients.
                             </p>
                             <span class="timeline-cta">Click to view details <span>→</span></span>
@@ -2044,14 +2105,15 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-item-content">
                         <div class="timeline-item-image">
-                            <img src="https://image.qwenlm.ai/public_source/32f357c9-d67e-416f-9ad3-ed287c1facc4/13b2ba9d8-67c4-4172-9f5a-ef82d605cf25.png" alt="UBS Singapore">
+                            <img src="https://image.qwenlm.ai/public_source/32f357c9-d67e-416f-9ad3-ed287c1facc4/13b2ba9d8-67c4-4172-9f5a-ef82d605cf25.png"
+                                alt="UBS Singapore">
                             <span class="timeline-item-badge">Asset Management</span>
                         </div>
                         <div class="timeline-item-body">
                             <span class="timeline-year">2000 - 2003</span>
                             <h3 class="timeline-title">UBS Asset Management</h3>
                             <p class="timeline-description">
-                                Portfolio Risk Manager. Managing multi-asset portfolio risk exposure 
+                                Portfolio Risk Manager. Managing multi-asset portfolio risk exposure
                                 and stress testing for institutional clients.
                             </p>
                             <span class="timeline-cta">Click to view details <span>→</span></span>
@@ -2064,14 +2126,15 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-item-content">
                         <div class="timeline-item-image">
-                            <img src="https://image.qwenlm.ai/public_source/32f357c9-d67e-416f-9ad3-ed287c1facc4/1a19caeb1-16aa-41f9-a1bb-006447f21e1b.png" alt="London Financial District">
+                            <img src="https://image.qwenlm.ai/public_source/32f357c9-d67e-416f-9ad3-ed287c1facc4/1a19caeb1-16aa-41f9-a1bb-006447f21e1b.png"
+                                alt="London Financial District">
                             <span class="timeline-item-badge">Global Expansion</span>
                         </div>
                         <div class="timeline-item-body">
                             <span class="timeline-year">2003 - 2014</span>
                             <h3 class="timeline-title">Global Expansion</h3>
                             <p class="timeline-description">
-                                London and New York assignments. Global macro asset allocation and 
+                                London and New York assignments. Global macro asset allocation and
                                 sovereign wealth fund advisory at BlackRock and State Street.
                             </p>
                             <span class="timeline-cta">Click to view details <span>→</span></span>
@@ -2084,14 +2147,15 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-item-content">
                         <div class="timeline-item-image">
-                            <img src="https://image.qwenlm.ai/public_source/32f357c9-d67e-416f-9ad3-ed287c1facc4/1bf4952fa-852e-4250-92b5-acea0b85d907.png" alt="Bitcoin Blockchain">
+                            <img src="https://image.qwenlm.ai/public_source/32f357c9-d67e-416f-9ad3-ed287c1facc4/1bf4952fa-852e-4250-92b5-acea0b85d907.png"
+                                alt="Bitcoin Blockchain">
                             <span class="timeline-item-badge">Digital Assets</span>
                         </div>
                         <div class="timeline-item-body">
                             <span class="timeline-year">2014 - 2018</span>
                             <h3 class="timeline-title">Digital Assets Pioneer</h3>
                             <p class="timeline-description">
-                                Systematic research on Bitcoin and blockchain. Digital Assets Strategy 
+                                Systematic research on Bitcoin and blockchain. Digital Assets Strategy
                                 Advisor with focus on risk modeling and regulatory frameworks.
                             </p>
                             <span class="timeline-cta">Click to view details <span>→</span></span>
@@ -2104,14 +2168,15 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-item-content">
                         <div class="timeline-item-image">
-                            <img src="https://image.qwenlm.ai/public_source/32f357c9-d67e-416f-9ad3-ed287c1facc4/17a05581b-fdb1-4dd2-bafb-2fe8085b627f.png" alt="GlobalVision Office">
+                            <img src="https://image.qwenlm.ai/public_source/32f357c9-d67e-416f-9ad3-ed287c1facc4/17a05581b-fdb1-4dd2-bafb-2fe8085b627f.png"
+                                alt="GlobalVision Office">
                             <span class="timeline-item-badge">Entrepreneurship</span>
                         </div>
                         <div class="timeline-item-body">
                             <span class="timeline-year">2019 - Present</span>
                             <h3 class="timeline-title">GlobalVision Capital</h3>
                             <p class="timeline-description">
-                                Founded GlobalVision Capital in Singapore. Integrating traditional 
+                                Founded GlobalVision Capital in Singapore. Integrating traditional
                                 and digital assets with focus on strategic allocation and risk management.
                             </p>
                             <span class="timeline-cta">Click to view details <span>→</span></span>
@@ -2134,13 +2199,14 @@
                 <div class="philosophy-card" onclick="openPhilosophyModal(0)">
                     <div class="philosophy-icon-wrapper">
                         <svg class="philosophy-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 6c1.4 0 2.8 1.1 2.8 2.5V11c.6 0 1.2.6 1.2 1.2v3.5c0 .7-.6 1.3-1.2 1.3H9.2c-.6 0-1.2-.6-1.2-1.2v-3.5c0-.7.6-1.3 1.2-1.3V9.5C9.2 8.1 10.6 7 12 7zm0 1c-.8 0-1.5.7-1.5 1.5V11h3V9.5c0-.8-.7-1.5-1.5-1.5z"/>
-                            <path d="M12 14c-.8 0-1.5.7-1.5 1.5s.7 1.5 1.5 1.5 1.5-.7 1.5-1.5-.7-1.5-1.5-1.5z"/>
+                            <path
+                                d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 6c1.4 0 2.8 1.1 2.8 2.5V11c.6 0 1.2.6 1.2 1.2v3.5c0 .7-.6 1.3-1.2 1.3H9.2c-.6 0-1.2-.6-1.2-1.2v-3.5c0-.7.6-1.3 1.2-1.3V9.5C9.2 8.1 10.6 7 12 7zm0 1c-.8 0-1.5.7-1.5 1.5V11h3V9.5c0-.8-.7-1.5-1.5-1.5z" />
+                            <path d="M12 14c-.8 0-1.5.7-1.5 1.5s.7 1.5 1.5 1.5 1.5-.7 1.5-1.5-.7-1.5-1.5-1.5z" />
                         </svg>
                     </div>
                     <h3>Risk Before Returns</h3>
                     <p>
-                        Risk is not price volatility, but structural mistakes. 
+                        Risk is not price volatility, but structural mistakes.
                         True investing means maintaining control amid uncertainty.
                     </p>
                     <span class="philosophy-cta">Learn more <span>→</span></span>
@@ -2150,13 +2216,15 @@
                 <div class="philosophy-card" onclick="openPhilosophyModal(1)">
                     <div class="philosophy-icon-wrapper">
                         <svg class="philosophy-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/>
-                            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z"/>
+                            <path
+                                d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z" />
+                            <path
+                                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z" />
                         </svg>
                     </div>
                     <h3>Disciplined Approach</h3>
                     <p>
-                        Highly disciplined, institutional in structure, 
+                        Highly disciplined, institutional in structure,
                         transparent and explainable. We study market structures.
                     </p>
                     <span class="philosophy-cta">Learn more <span>→</span></span>
@@ -2166,12 +2234,13 @@
                 <div class="philosophy-card" onclick="openPhilosophyModal(2)">
                     <div class="philosophy-icon-wrapper">
                         <svg class="philosophy-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
                         </svg>
                     </div>
                     <h3>Bridge Two Worlds</h3>
                     <p>
-                        The future of finance belongs to long-term capital that 
+                        The future of finance belongs to long-term capital that
                         understands how traditional and crypto systems work together.
                     </p>
                     <span class="philosophy-cta">Learn more <span>→</span></span>
@@ -2179,8 +2248,8 @@
             </div>
             <div class="philosophy-quote">
                 <blockquote>
-                    Markets will always be uncertain, but risk can be understood and managed. 
-                    True investment success is not about short-term profits, but about managing 
+                    Markets will always be uncertain, but risk can be understood and managed.
+                    True investment success is not about short-term profits, but about managing
                     capital steadily and sustainably within a complex world.
                 </blockquote>
                 <cite>— Ethan Huang</cite>
@@ -2228,12 +2297,15 @@
                 <!-- Item 1: Traditional Asset Management -->
                 <div class="expertise-item" onclick="openExpertiseModal(0)">
                     <div class="expertise-item-image">
-                        <img src="https://image.qwenlm.ai/g/1a2b3c4d-5e6f-7g8h-9i0j-1k2l3m4n5o6p/T1a2B3c4D5e6F7g8H9i0J.jpg" alt="Traditional Asset Management - Stock Market Trading Floor">
+                        <img src="images/traditional_management.png"
+                            alt="Traditional Asset Management - Stock Market Trading Floor">
                         <span class="expertise-item-number">01</span>
                     </div>
                     <div class="expertise-item-body">
                         <h3>Traditional Asset Management</h3>
-                        <p>Deep expertise in global equities, fixed income, and alternative investments with institutional-grade risk frameworks developed through decades at J.P. Morgan, UBS, BlackRock, and State Street.</p>
+                        <p>Deep expertise in global equities, fixed income, and alternative investments with
+                            institutional-grade risk frameworks developed through decades at J.P. Morgan, UBS,
+                            BlackRock, and State Street.</p>
                         <span class="expertise-cta">Learn more <span>→</span></span>
                     </div>
                 </div>
@@ -2241,12 +2313,14 @@
                 <!-- Item 2: Risk Management -->
                 <div class="expertise-item" onclick="openExpertiseModal(1)">
                     <div class="expertise-item-image">
-                        <img src="https://image.qwenlm.ai/g/2b3c4d5e-6f7g-8h9i-0j1k-2l3m4n5o6p7q/T2b3C4d5E6f7G8h9I0j1K.jpg" alt="Risk Management - Financial Analytics Dashboard">
+                        <img src="images/risk_management.png" alt="Risk Management - Financial Analytics Dashboard">
                         <span class="expertise-item-number">02</span>
                     </div>
                     <div class="expertise-item-body">
                         <h3>Risk Management</h3>
-                        <p>Systematic risk assessment, stress testing, and scenario analysis developed through multiple financial crises including the 1997 Asian Financial Crisis and 2008 Global Financial Crisis.</p>
+                        <p>Systematic risk assessment, stress testing, and scenario analysis developed through multiple
+                            financial crises including the 1997 Asian Financial Crisis and 2008 Global Financial Crisis.
+                        </p>
                         <span class="expertise-cta">Learn more <span>→</span></span>
                     </div>
                 </div>
@@ -2254,12 +2328,15 @@
                 <!-- Item 3: Global Asset Allocation -->
                 <div class="expertise-item" onclick="openExpertiseModal(2)">
                     <div class="expertise-item-image">
-                        <img src="https://image.qwenlm.ai/g/3c4d5e6f-7g8h-9i0j-1k2l-3m4n5o6p7q8r/T3c4D5e6F7g8H9i0J1k2L.jpg" alt="Global Asset Allocation - World Map Financial Markets">
+                        <img src="images/global_allocation.png"
+                            alt="Global Asset Allocation - World Map Financial Markets">
                         <span class="expertise-item-number">03</span>
                     </div>
                     <div class="expertise-item-body">
                         <h3>Global Asset Allocation</h3>
-                        <p>Cross-regional asset correlation analysis and strategic allocation for sovereign wealth funds and family offices across Asia, Europe, and North America with deep understanding of macroeconomic trends.</p>
+                        <p>Cross-regional asset correlation analysis and strategic allocation for sovereign wealth funds
+                            and family offices across Asia, Europe, and North America with deep understanding of
+                            macroeconomic trends.</p>
                         <span class="expertise-cta">Learn more <span>→</span></span>
                     </div>
                 </div>
@@ -2267,12 +2344,15 @@
                 <!-- Item 4: Crypto Assets & Digital Finance -->
                 <div class="expertise-item" onclick="openExpertiseModal(3)">
                     <div class="expertise-item-image">
-                        <img src="https://image.qwenlm.ai/g/4d5e6f7g-8h9i-0j1k-2l3m-4n5o6p7q8r9s/T4d5E6f7G8h9I0j1K2l3M.jpg" alt="Crypto Assets Digital Finance - Blockchain Technology">
+                        <img src="images/crypto_digital_finance.png"
+                            alt="Crypto Assets Digital Finance - Blockchain Technology">
                         <span class="expertise-item-number">04</span>
                     </div>
                     <div class="expertise-item-body">
                         <h3>Crypto Assets & Digital Finance</h3>
-                        <p>Strategic exposure to digital assets, blockchain infrastructure investments, and risk-managed integration with traditional portfolios. Pioneer in institutional digital asset frameworks since 2014.</p>
+                        <p>Strategic exposure to digital assets, blockchain infrastructure investments, and risk-managed
+                            integration with traditional portfolios. Pioneer in institutional digital asset frameworks
+                            since 2014.</p>
                         <span class="expertise-cta">Learn more <span>→</span></span>
                     </div>
                 </div>
@@ -2292,8 +2372,8 @@
                     <span class="impact-icon">🎓</span>
                     <h3>Education Support</h3>
                     <p>
-                        Since 2012, supporting scholarship programs at NTU, NUS, and HKUST 
-                        for students in Financial Engineering, Data Science, and Computer Science 
+                        Since 2012, supporting scholarship programs at NTU, NUS, and HKUST
+                        for students in Financial Engineering, Data Science, and Computer Science
                         from ordinary family backgrounds.
                     </p>
                     <ul class="impact-list">
@@ -2307,7 +2387,7 @@
                     <span class="impact-icon">🏥</span>
                     <h3>Medical Technology</h3>
                     <p>
-                        Supporting medical technology innovation and public health initiatives 
+                        Supporting medical technology innovation and public health initiatives
                         through family office and GlobalVision-associated funds.
                     </p>
                     <ul class="impact-list">
@@ -2321,7 +2401,7 @@
                     <span class="impact-icon">🚀</span>
                     <h3>Technology Innovation</h3>
                     <p>
-                        Supporting startup accelerators and innovation labs, providing young 
+                        Supporting startup accelerators and innovation labs, providing young
                         teams with seed investment and risk management advisory.
                     </p>
                     <ul class="impact-list">
@@ -2335,7 +2415,7 @@
                     <span class="impact-icon">🤝</span>
                     <h3>Financial Inclusion</h3>
                     <p>
-                        Believing that financial knowledge should not belong only to Wall Street, 
+                        Believing that financial knowledge should not belong only to Wall Street,
                         supporting financial literacy programs across multiple regions.
                     </p>
                     <ul class="impact-list">
@@ -2361,7 +2441,7 @@
                     <span class="contribution-number">01</span>
                     <h3>Promoting Institutional Understanding of Digital Assets</h3>
                     <p>
-                        Between 2016-2020, shared insights at closed-door institutional meetings, 
+                        Between 2016-2020, shared insights at closed-door institutional meetings,
                         emphasizing digital assets as financial infrastructure, not speculation.
                     </p>
                     <span class="expertise-cta" style="margin-top: 1rem;">Learn more <span>→</span></span>
@@ -2370,7 +2450,7 @@
                     <span class="contribution-number">02</span>
                     <h3>Digital Asset Risk Management Frameworks</h3>
                     <p>
-                        Designed institutional-level risk assessment models for cryptocurrency 
+                        Designed institutional-level risk assessment models for cryptocurrency
                         volatility, liquidity, market structure, and regulatory uncertainty.
                     </p>
                     <span class="expertise-cta" style="margin-top: 1rem;">Learn more <span>→</span></span>
@@ -2379,7 +2459,7 @@
                     <span class="contribution-number">03</span>
                     <h3>Facilitating Traditional Capital into New Finance</h3>
                     <p>
-                        Helped family offices, asset managers, and HNW investors understand 
+                        Helped family offices, asset managers, and HNW investors understand
                         and access digital assets with emphasis on understanding risks first.
                     </p>
                     <span class="expertise-cta" style="margin-top: 1rem;">Learn more <span>→</span></span>
@@ -2400,8 +2480,8 @@
                 <div class="contact-info">
                     <h3>Let's Start a Conversation</h3>
                     <p>
-                        I believe meaningful conversations begin with trust and clarity. 
-                        For partnership discussions, strategic consultations, or investment 
+                        I believe meaningful conversations begin with trust and clarity.
+                        For partnership discussions, strategic consultations, or investment
                         inquiries, please reach out through the channels below.
                     </p>
 
@@ -2463,7 +2543,8 @@
                     <div class="availability-section">
                         <h4>Meeting Availability</h4>
                         <p class="availability-info">
-                            All consultations are conducted by appointment to ensure dedicated attention to each client's needs.
+                            All consultations are conducted by appointment to ensure dedicated attention to each
+                            client's needs.
                         </p>
                         <div class="availability-schedule">
                             <div class="availability-item">
@@ -2524,7 +2605,8 @@
 
                         <div class="form-group">
                             <label for="message">Message *</label>
-                            <textarea id="message" name="message" required placeholder="Please describe your inquiry..."></textarea>
+                            <textarea id="message" name="message" required
+                                placeholder="Please describe your inquiry..."></textarea>
                         </div>
 
                         <div class="form-submit">
@@ -2539,7 +2621,7 @@
                         <div class="success-icon">✓</div>
                         <h4>Message Sent Successfully!</h4>
                         <p>
-                            Thank you for reaching out. Your consultation request has been received 
+                            Thank you for reaching out. Your consultation request has been received
                             and will be reviewed shortly.
                         </p>
                         <div class="form-success-email">
@@ -2549,7 +2631,8 @@
                         <p style="font-size: 0.85rem; color: var(--text-muted);">
                             Expected response time: 24-48 hours<br>
                             For urgent matters, please email directly at<br>
-                            <a href="mailto:ethanlim@globalvisionwealth.com" style="color: var(--accent-gold);">ethanlim@globalvisionwealth.com</a>
+                            <a href="mailto:ethanlim@globalvisionwealth.com"
+                                style="color: var(--accent-gold);">ethanlim@globalvisionwealth.com</a>
                         </p>
                         <button class="btn" onclick="resetForm()" style="margin-top: 1.5rem;">
                             Send Another Message
@@ -2934,33 +3017,33 @@
         // Form Submission Handler - FIXED
         function handleSubmit(event) {
             event.preventDefault();
-            
+
             const form = document.getElementById('contactForm');
             const submitBtn = document.getElementById('submitBtn');
             const formSuccess = document.getElementById('formSuccess');
             const confirmationEmail = document.getElementById('confirmationEmail');
-            
+
             // Get form data
             const formData = new FormData(form);
             const name = formData.get('name');
             const email = formData.get('email');
             const subject = formData.get('subject');
             const message = formData.get('message');
-            
+
             // Show loading state
             submitBtn.textContent = 'Sending...';
             submitBtn.disabled = true;
             submitBtn.style.opacity = '0.7';
-            
+
             // Simulate email sending (2 second delay)
             setTimeout(() => {
                 // Hide form, show success message
                 form.style.display = 'none';
                 formSuccess.classList.add('active');
-                
+
                 // Set confirmation email
                 confirmationEmail.textContent = email;
-                
+
                 // Log the "sent" email (for demo purposes)
                 console.log('=== CONSULTATION REQUEST RECEIVED ===');
                 console.log('Name:', name);
@@ -2969,10 +3052,10 @@
                 console.log('Message:', message);
                 console.log('Sent to: ethanlim@globalvisionwealth.com');
                 console.log('=====================================');
-                
+
                 // In real implementation, this would send to backend
                 // fetch('/api/contact', { method: 'POST', body: formData })
-                
+
             }, 2000);
         }
 
@@ -2981,11 +3064,11 @@
             const form = document.getElementById('contactForm');
             const formSuccess = document.getElementById('formSuccess');
             const submitBtn = document.getElementById('submitBtn');
-            
+
             form.reset();
             form.style.display = 'flex';
             formSuccess.classList.remove('active');
-            
+
             submitBtn.textContent = 'Send Message';
             submitBtn.disabled = false;
             submitBtn.style.opacity = '1';
@@ -2996,13 +3079,13 @@
             console.log('Opening timeline modal:', index);
             const data = timelineData[index];
             if (!data) return;
-            
+
             let modal = document.getElementById('timelineModalOverlay');
             if (!modal) {
                 modal = document.createElement('div');
                 modal.id = 'timelineModalOverlay';
                 modal.className = 'philosophy-modal-overlay';
-                modal.onclick = function(event) {
+                modal.onclick = function (event) {
                     if (event.target === modal) closeTimelineModal();
                 };
                 modal.innerHTML = `
@@ -3025,12 +3108,12 @@
                 `;
                 document.body.appendChild(modal);
             }
-            
+
             document.getElementById('timelineModalImg').src = data.image;
             document.getElementById('timelineModalYear').textContent = data.year;
             document.getElementById('timelineModalTitle').textContent = data.title;
             document.getElementById('timelineModalDesc').textContent = data.description;
-            
+
             const gridHtml = data.details.map(detail => `
                 <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:1.5rem;">
                     <div style="color:var(--accent-gold);font-size:0.75rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:0.5rem;">${detail.label}</div>
@@ -3038,7 +3121,7 @@
                 </div>
             `).join('');
             document.getElementById('timelineModalGrid').innerHTML = gridHtml;
-            
+
             const respHtml = `
                 <div style="margin-bottom:2rem;">
                     <h4 style="color:var(--accent-gold);font-size:0.8rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:1rem;padding-bottom:0.5rem;border-bottom:1px solid rgba(201,169,98,0.2);">Key Responsibilities</h4>
@@ -3048,7 +3131,7 @@
                 </div>
             `;
             document.getElementById('timelineModalResponsibilities').innerHTML = respHtml;
-            
+
             const achieveHtml = `
                 <div style="margin-bottom:2rem;">
                     <h4 style="color:var(--accent-gold);font-size:0.8rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:1rem;padding-bottom:0.5rem;border-bottom:1px solid rgba(201,169,98,0.2);">Key Achievements</h4>
@@ -3058,10 +3141,10 @@
                 </div>
             `;
             document.getElementById('timelineModalAchievements').innerHTML = achieveHtml;
-            
+
             const quoteHtml = `<blockquote style="font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--text-light);font-style:italic;line-height:1.7;">"${data.quote}"</blockquote>`;
             document.getElementById('timelineModalQuote').innerHTML = quoteHtml;
-            
+
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
@@ -3081,13 +3164,13 @@
             document.getElementById('modalPhilosophyTitle').textContent = data.title;
             document.getElementById('modalPhilosophySubtitle').textContent = data.subtitle;
             document.getElementById('modalPhilosophyCore').textContent = data.core;
-            
+
             const appHtml = data.application.map(app => `<li>${app}</li>`).join('');
             document.getElementById('modalPhilosophyApplication').innerHTML = appHtml;
-            
+
             document.getElementById('modalPhilosophyWhy').textContent = data.why;
             document.getElementById('modalPhilosophyQuote').textContent = `"${data.quote}"`;
-            
+
             document.getElementById('philosophyModalOverlay').classList.add('active');
             document.body.style.overflow = 'hidden';
         }
@@ -3103,13 +3186,13 @@
             console.log('Opening expertise modal:', index);
             const data = expertiseData[index];
             if (!data) return;
-            
+
             let modal = document.getElementById('expertiseModalOverlay');
             if (!modal) {
                 modal = document.createElement('div');
                 modal.id = 'expertiseModalOverlay';
                 modal.className = 'philosophy-modal-overlay';
-                modal.onclick = function(event) {
+                modal.onclick = function (event) {
                     if (event.target === modal) closeExpertiseModal();
                 };
                 modal.innerHTML = `
@@ -3135,11 +3218,11 @@
                 `;
                 document.body.appendChild(modal);
             }
-            
+
             document.getElementById('expertiseModalTitle').textContent = data.title;
             document.getElementById('expertiseModalSubtitle').textContent = data.subtitle;
             document.getElementById('expertiseModalOverview').textContent = data.overview;
-            
+
             const gridHtml = data.details.map(detail => `
                 <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:1.5rem;">
                     <div style="color:var(--accent-gold);font-size:0.75rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:0.5rem;">${detail.label}</div>
@@ -3147,13 +3230,13 @@
                 </div>
             `).join('');
             document.getElementById('expertiseModalGrid').innerHTML = gridHtml;
-            
+
             const expertiseHtml = data.expertise.map(exp => `<li>${exp}</li>`).join('');
             document.getElementById('expertiseModalExpertise').innerHTML = expertiseHtml;
-            
+
             const quoteHtml = `<blockquote style="font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--text-light);font-style:italic;line-height:1.7;">"${data.quote}"</blockquote>`;
             document.getElementById('expertiseModalQuote').innerHTML = quoteHtml;
-            
+
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
@@ -3171,13 +3254,13 @@
             console.log('Opening contribution modal:', index);
             const data = contributionData[index];
             if (!data) return;
-            
+
             let modal = document.getElementById('contributionModalOverlay');
             if (!modal) {
                 modal = document.createElement('div');
                 modal.id = 'contributionModalOverlay';
                 modal.className = 'philosophy-modal-overlay';
-                modal.onclick = function(event) {
+                modal.onclick = function (event) {
                     if (event.target === modal) closeContributionModal();
                 };
                 modal.innerHTML = `
@@ -3203,11 +3286,11 @@
                 `;
                 document.body.appendChild(modal);
             }
-            
+
             document.getElementById('contributionModalTitle').textContent = data.title;
             document.getElementById('contributionModalSubtitle').textContent = data.subtitle;
             document.getElementById('contributionModalOverview').textContent = data.overview;
-            
+
             const gridHtml = data.details.map(detail => `
                 <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:1.5rem;">
                     <div style="color:var(--accent-gold);font-size:0.75rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:0.5rem;">${detail.label}</div>
@@ -3215,13 +3298,13 @@
                 </div>
             `).join('');
             document.getElementById('contributionModalGrid').innerHTML = gridHtml;
-            
+
             const impactHtml = data.impact.map(imp => `<li>${imp}</li>`).join('');
             document.getElementById('contributionModalImpact').innerHTML = impactHtml;
-            
+
             const quoteHtml = `<blockquote style="font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--text-light);font-style:italic;line-height:1.7;">"${data.quote}"</blockquote>`;
             document.getElementById('contributionModalQuote').innerHTML = quoteHtml;
-            
+
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
@@ -3262,7 +3345,7 @@
 
         // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
@@ -3294,7 +3377,7 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-                    
+
                     if (entry.target.classList.contains('stat-card')) {
                         const numberEl = entry.target.querySelector('.stat-number');
                         if (numberEl && numberEl.textContent === '0') {
@@ -3320,7 +3403,23 @@
                 document.querySelector('.nav-links').style.display = 'flex';
             }
         });
+        // Favicon Animation
+        function animateFavicon() {
+            const favicon = document.getElementById('favicon');
+            if (!favicon) return;
+            let isGlow = false;
+
+            setInterval(() => {
+                isGlow = !isGlow;
+                favicon.href = isGlow ? 'images/favicon_glow.png' : 'images/favicon_base.png';
+            }, 1500);
+        }
+
+        // Initialize
+        window.addEventListener('load', () => {
+            animateFavicon();
+        });
     </script>
 </body>
-</html>
 
+</html>
