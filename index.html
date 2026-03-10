@@ -1,182 +1,3326 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ethan Huang | Founder & Chief Investment Officer - GlobalVision</title>
-    <meta name="description"
-        content="Portfolio of Ethan Huang (Huang Macheng), a veteran investment professional bridging traditional finance and digital assets. Founder & CIO of GlobalVision Capital.">
-
-    <!-- Fonts -->
+    <title>Ethan Huang | Founder & Chief Investment Officer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="style.css">
+        :root {
+            --primary-dark: #0f172a;
+            --primary-blue: #1e3a5f;
+            --primary-gray: #334155;
+            --accent-gold: #c9a962;
+            --accent-gold-light: #d4b870;
+            --text-light: #f8fafc;
+            --text-muted: #94a3b8;
+            --gradient-dark: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #334155 100%);
+            --gradient-gold: linear-gradient(135deg, #c9a962 0%, #f0d78c 50%, #c9a962 100%);
+            --gradient-card: linear-gradient(145deg, rgba(30,58,95,0.4) 0%, rgba(15,23,42,0.6) 100%);
+            --glow-gold: 0 0 40px rgba(201,169,98,0.3);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--primary-dark);
+            color: var(--text-light);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.5rem 0;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            padding: 1rem 0;
+            background: rgba(15, 23, 42, 0.98);
+            box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-light);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+
+        .logo span {
+            color: var(--accent-gold);
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+            background: linear-gradient(135deg, rgba(15,23,42,0.95) 0%, rgba(30,58,95,0.9) 100%),
+                        url('https://image.qwenlm.ai/public_source/32f357c9-d67e-416f-9ad3-ed287c1facc4/113f98b38-947e-4119-90e1-19ac9784fd76.png') center/cover fixed;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at 30% 50%, rgba(201,169,98,0.08) 0%, transparent 50%),
+                        radial-gradient(ellipse at 70% 50%, rgba(30,58,95,0.15) 0%, transparent 50%);
+            z-index: 0;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text {
+            animation: fadeInLeft 1s ease;
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: fadeInRight 1s ease;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 450px;
+        }
+
+        .hero-image-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: 20px;
+            bottom: 20px;
+            border: 2px solid rgba(201,169,98,0.3);
+            border-radius: 4px;
+            z-index: -1;
+            animation: borderPulse 3s infinite;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 4px;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.4), 0 0 60px rgba(201,169,98,0.1);
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.5s ease;
+        }
+
+        .hero-image img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 50px 100px rgba(0,0,0,0.5), 0 0 80px rgba(201,169,98,0.2);
+        }
+
+        .hero-subtitle {
+            color: var(--accent-gold);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            display: inline-block;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .hero-subtitle::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--gradient-gold);
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #f8fafc 0%, #cbd5e1 50%, #94a3b8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-info {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-info-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            background: rgba(255,255,255,0.05);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .hero-info-item span {
+            color: var(--accent-gold);
+        }
+
+        .hero-description {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            max-width: 500px;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 2px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: var(--gradient-gold);
+            color: var(--primary-dark);
+            box-shadow: 0 4px 15px rgba(201,169,98,0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(201,169,98,0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text-light);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+            transform: translateY(-3px);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 6rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-subtitle {
+            color: var(--accent-gold);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            display: inline-block;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .section-subtitle::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 2px;
+            background: var(--gradient-gold);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-top: 1rem;
+        }
+
+        /* About Section */
+        .about {
+            background: linear-gradient(180deg, var(--primary-dark) 0%, var(--primary-blue) 100%);
+            position: relative;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201,169,98,0.3), transparent);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 4px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            right: 15px;
+            bottom: 15px;
+            border: 2px solid rgba(201,169,98,0.2);
+            border-radius: 4px;
+            z-index: -1;
+        }
+
+        .about-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+            line-height: 1.4;
+        }
+
+        .about-content p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .about-details {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .about-detail-item {
+            padding: 1rem;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 4px;
+        }
+
+        .about-detail-label {
+            color: var(--accent-gold);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 0.3rem;
+        }
+
+        .about-detail-value {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Stats Section */
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .stat-card {
+            background: var(--gradient-card);
+            border: 1px solid rgba(201,169,98,0.15);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(201,169,98,0.4);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3), var(--glow-gold);
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+            display: block;
+            line-height: 1;
+        }
+
+        .stat-label {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        /* Enhanced Timeline Section */
+        .timeline {
+            background: var(--primary-dark);
+            position: relative;
+        }
+
+        .timeline-container {
+            position: relative;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(201,169,98,0) 0%, rgba(201,169,98,0.6) 10%, rgba(201,169,98,0.6) 90%, rgba(201,169,98,0) 100%);
+            box-shadow: 0 0 20px rgba(201,169,98,0.3);
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 4rem;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-item:hover {
+            transform: scale(1.02);
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-item-content {
+            width: 48%;
+            background: var(--gradient-card);
+            border: 1px solid rgba(201,169,98,0.2);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .timeline-item-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-gold);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .timeline-item:hover .timeline-item-content {
+            border-color: rgba(201,169,98,0.5);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4), var(--glow-gold);
+            transform: translateY(-5px);
+        }
+
+        .timeline-item:hover .timeline-item-content::before {
+            transform: scaleX(1);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-item-content {
+            margin-right: auto;
+        }
+
+        .timeline-item:nth-child(even) .timeline-item-content {
+            margin-left: auto;
+        }
+
+        .timeline-item-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .timeline-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .timeline-item:hover .timeline-item-image img {
+            transform: scale(1.1);
+        }
+
+        .timeline-item-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(15,23,42,0.9) 100%);
+        }
+
+        .timeline-item-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: rgba(201,169,98,0.95);
+            color: var(--primary-dark);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            z-index: 2;
+        }
+
+        .timeline-item-body {
+            padding: 1.8rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .timeline-year {
+            display: inline-block;
+            color: var(--accent-gold);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 0.8rem;
+            background: rgba(201,169,98,0.1);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            border: 1px solid rgba(201,169,98,0.2);
+        }
+
+        .timeline-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+            line-height: 1.3;
+        }
+
+        .timeline-description {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin-bottom: 1.2rem;
+        }
+
+        .timeline-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-gold);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-cta span {
+            transition: transform 0.3s ease;
+        }
+
+        .timeline-item:hover .timeline-cta span {
+            transform: translateX(5px);
+        }
+
+        .timeline-dot {
+            width: 20px;
+            height: 20px;
+            background: var(--gradient-gold);
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 0 30px rgba(201,169,98,0.8);
+            z-index: 2;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover .timeline-dot {
+            transform: translateX(-50%) scale(1.4);
+            box-shadow: 0 0 50px rgba(201,169,98,1);
+        }
+
+        .timeline-dot::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            border: 2px solid rgba(201,169,98,0.3);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        /* Enhanced Philosophy Section */
+        .philosophy {
+            background: linear-gradient(180deg, var(--primary-blue) 0%, var(--primary-gray) 100%);
+            position: relative;
+        }
+
+        .philosophy::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201,169,98,0.3), transparent);
+        }
+
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+
+        .philosophy-card {
+            background: var(--gradient-card);
+            border: 1px solid rgba(201,169,98,0.2);
+            border-radius: 12px;
+            padding: 3rem 2.5rem;
+            transition: all 0.4s ease;
+            text-align: center;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .philosophy-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-gold);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .philosophy-card:hover {
+            transform: translateY(-15px);
+            border-color: rgba(201,169,98,0.5);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.4), var(--glow-gold);
+        }
+
+        .philosophy-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .philosophy-icon-wrapper {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 2rem;
+            background: rgba(201,169,98,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid rgba(201,169,98,0.2);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .philosophy-card:hover .philosophy-icon-wrapper {
+            background: rgba(201,169,98,0.2);
+            border-color: rgba(201,169,98,0.5);
+            transform: scale(1.1);
+            box-shadow: 0 0 40px rgba(201,169,98,0.3);
+        }
+
+        .philosophy-icon {
+            width: 50px;
+            height: 50px;
+            fill: var(--accent-gold);
+            transition: all 0.4s ease;
+        }
+
+        .philosophy-card:hover .philosophy-icon {
+            fill: var(--accent-gold-light);
+            transform: scale(1.1);
+        }
+
+        .philosophy-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin-bottom: 1.2rem;
+            color: var(--text-light);
+            line-height: 1.3;
+        }
+
+        .philosophy-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .philosophy-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-gold);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .philosophy-cta span {
+            transition: transform 0.3s ease;
+        }
+
+        .philosophy-card:hover .philosophy-cta span {
+            transform: translateX(5px);
+        }
+
+        .philosophy-quote {
+            text-align: center;
+            max-width: 800px;
+            margin: 4rem auto 0;
+            padding: 3rem;
+            background: rgba(201,169,98,0.05);
+            border: 1px solid rgba(201,169,98,0.15);
+            border-radius: 12px;
+            position: relative;
+        }
+
+        .philosophy-quote::before {
+            content: '"';
+            position: absolute;
+            top: 1.5rem;
+            left: 2.5rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 6rem;
+            color: rgba(201,169,98,0.1);
+            line-height: 1;
+        }
+
+        .philosophy-quote blockquote {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--text-light);
+            font-style: italic;
+            line-height: 1.7;
+            position: relative;
+            z-index: 1;
+        }
+
+        .philosophy-quote cite {
+            display: block;
+            margin-top: 1.5rem;
+            color: var(--accent-gold);
+            font-size: 0.9rem;
+            font-style: normal;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        /* Philosophy Modal */
+        .philosophy-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(15px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease;
+            padding: 2rem;
+        }
+
+        .philosophy-modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .philosophy-modal-content {
+            background: var(--gradient-card);
+            border: 1px solid rgba(201,169,98,0.3);
+            border-radius: 16px;
+            max-width: 800px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            transform: scale(0.9) translateY(50px);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.5);
+        }
+
+        .philosophy-modal-overlay.active .philosophy-modal-content {
+            transform: scale(1) translateY(0);
+        }
+
+        .philosophy-modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            width: 45px;
+            height: 45px;
+            background: rgba(201,169,98,0.15);
+            border: 1px solid rgba(201,169,98,0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-gold);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .philosophy-modal-close:hover {
+            background: var(--accent-gold);
+            color: var(--primary-dark);
+            transform: rotate(90deg);
+        }
+
+        .philosophy-modal-header {
+            padding: 3rem 3rem 2rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(201,169,98,0.15);
+        }
+
+        .philosophy-modal-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: rgba(201,169,98,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid rgba(201,169,98,0.3);
+        }
+
+        .philosophy-modal-icon svg {
+            width: 40px;
+            height: 40px;
+            fill: var(--accent-gold);
+        }
+
+        .philosophy-modal-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .philosophy-modal-subtitle {
+            color: var(--accent-gold);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .philosophy-modal-body {
+            padding: 3rem;
+        }
+
+        .philosophy-modal-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .philosophy-modal-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .philosophy-modal-section-title {
+            color: var(--accent-gold);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(201,169,98,0.2);
+        }
+
+        .philosophy-modal-text {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .philosophy-modal-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .philosophy-modal-list li {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            padding: 0.6rem 0;
+            padding-left: 1.8rem;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .philosophy-modal-list li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent-gold);
+            font-weight: 600;
+        }
+
+        .philosophy-modal-quote {
+            background: rgba(201,169,98,0.08);
+            border-left: 4px solid var(--accent-gold);
+            padding: 1.5rem 2rem;
+            border-radius: 0 8px 8px 0;
+            margin-top: 1.5rem;
+        }
+
+        .philosophy-modal-quote blockquote {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            font-style: italic;
+            line-height: 1.7;
+        }
+
+        /* Enhanced Expertise Section with Images */
+        .expertise {
+            background: var(--primary-dark);
+        }
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .expertise-item {
+            background: var(--gradient-card);
+            border: 1px solid rgba(201,169,98,0.2);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .expertise-item:hover {
+            border-color: rgba(201,169,98,0.5);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4), var(--glow-gold);
+            transform: translateY(-5px);
+        }
+
+        .expertise-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-gold);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .expertise-item:hover::before {
+            transform: scaleX(1);
+        }
+
+        .expertise-item-image {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .expertise-item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .expertise-item:hover .expertise-item-image img {
+            transform: scale(1.1);
+        }
+
+        .expertise-item-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(15,23,42,0.95) 100%);
+        }
+
+        .expertise-item-number {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            opacity: 0.3;
+            z-index: 2;
+        }
+
+        .expertise-item-body {
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .expertise-item h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-light);
+            line-height: 1.3;
+        }
+
+        .expertise-item p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .expertise-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-gold);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .expertise-cta span {
+            transition: transform 0.3s ease;
+        }
+
+        .expertise-item:hover .expertise-cta span {
+            transform: translateX(5px);
+        }
+
+        /* Impact Section */
+        .impact {
+            background: linear-gradient(180deg, var(--primary-gray) 0%, var(--primary-dark) 100%);
+            position: relative;
+        }
+
+        .impact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201,169,98,0.3), transparent);
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+        }
+
+        .impact-card {
+            background: var(--gradient-card);
+            border: 1px solid rgba(201,169,98,0.15);
+            border-radius: 8px;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .impact-card:hover {
+            border-color: rgba(201,169,98,0.4);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3), var(--glow-gold);
+            transform: translateY(-5px);
+        }
+
+        .impact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .impact-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        .impact-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .impact-list {
+            list-style: none;
+        }
+
+        .impact-list li {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .impact-list li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent-gold);
+        }
+
+        /* Contributions */
+        .contributions {
+            background: var(--primary-dark);
+        }
+
+        .contributions-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .contribution-card {
+            text-align: center;
+            padding: 2.5rem;
+            background: var(--gradient-card);
+            border: 1px solid rgba(201,169,98,0.15);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .contribution-card:hover {
+            border-color: rgba(201,169,98,0.4);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3), var(--glow-gold);
+        }
+
+        .contribution-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-gold);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .contribution-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .contribution-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .contribution-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        .contribution-card p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+
+        /* Enhanced Contact Section */
+        .contact {
+            background: linear-gradient(180deg, var(--primary-gray) 0%, var(--primary-dark) 100%);
+            position: relative;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201,169,98,0.3), transparent);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-info {
+            padding: 2rem 0;
+        }
+
+        .contact-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+            line-height: 1.3;
+        }
+
+        .contact-info > p {
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.2rem;
+            padding: 1.2rem;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .contact-method:hover {
+            background: rgba(255,255,255,0.05);
+            border-color: rgba(201,169,98,0.3);
+            transform: translateX(5px);
+        }
+
+        .contact-method-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(201,169,98,0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-gold);
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+
+        .contact-method:hover .contact-method-icon {
+            background: var(--gradient-gold);
+            color: var(--primary-dark);
+            transform: scale(1.1);
+        }
+
+        .contact-method-content {
+            flex: 1;
+        }
+
+        .contact-method-label {
+            color: var(--accent-gold);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-method-value {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .contact-method-value a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-method-value a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* Location Cards */
+        .locations-section {
+            margin-top: 2rem;
+        }
+
+        .locations-section h4 {
+            color: var(--accent-gold);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(201,169,98,0.2);
+        }
+
+        .location-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .location-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 8px;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .location-card:hover {
+            background: rgba(201,169,98,0.1);
+            border-color: rgba(201,169,98,0.3);
+            transform: translateY(-3px);
+        }
+
+        .location-card-icon {
+            font-size: 1.8rem;
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+
+        .location-card-city {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .location-card-region {
+            color: var(--text-muted);
+            font-size: 0.75rem;
+        }
+
+        /* Availability Section */
+        .availability-section {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: rgba(201,169,98,0.05);
+            border: 1px solid rgba(201,169,98,0.15);
+            border-radius: 8px;
+        }
+
+        .availability-section h4 {
+            color: var(--accent-gold);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .availability-info {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .availability-schedule {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .availability-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .availability-item span {
+            color: var(--accent-gold);
+            font-size: 1rem;
+        }
+
+        /* Contact Form */
+        .contact-form-wrapper {
+            background: var(--gradient-card);
+            border: 1px solid rgba(201,169,98,0.2);
+            border-radius: 12px;
+            padding: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-form-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-gold);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .contact-form-wrapper:hover::before {
+            transform: scaleX(1);
+        }
+
+        .form-header {
+            margin-bottom: 2rem;
+        }
+
+        .form-header h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-header p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            padding: 1rem;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 4px;
+            color: var(--text-light);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+            background: rgba(255,255,255,0.08);
+            box-shadow: 0 0 20px rgba(201,169,98,0.1);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-group select {
+            cursor: pointer;
+        }
+
+        .form-group select option {
+            background: var(--primary-dark);
+            color: var(--text-light);
+        }
+
+        .form-submit {
+            margin-top: 1rem;
+        }
+
+        .form-submit .btn {
+            width: 100%;
+            padding: 1.2rem;
+            font-size: 1rem;
+            letter-spacing: 1.5px;
+        }
+
+        /* Success Message */
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        .form-success.active {
+            display: block;
+            animation: fadeInUp 0.6s ease;
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: rgba(201,169,98,0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: var(--accent-gold);
+        }
+
+        .form-success h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .form-success p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-success-email {
+            background: rgba(201,169,98,0.1);
+            padding: 1rem;
+            border-radius: 4px;
+            color: var(--accent-gold);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-success .btn {
+            background: transparent;
+            border: 1px solid rgba(201,169,98,0.3);
+            color: var(--accent-gold);
+        }
+
+        .form-success .btn:hover {
+            background: rgba(201,169,98,0.1);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-dark);
+            padding: 3rem 0;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--text-light);
+        }
+
+        .footer-logo span {
+            color: var(--accent-gold);
+        }
+
+        .footer-text {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .social-links a {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* Animations */
+        @keyframes fadeInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes fadeInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes borderPulse {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.02); }
+        }
+
+        /* Scroll Progress */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: var(--gradient-gold);
+            z-index: 1001;
+            width: 0%;
+            transition: width 0.1s ease;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .hero-content,
+            .about-grid,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .about-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .philosophy-grid,
+            .expertise-grid,
+            .contributions-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .location-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .availability-schedule {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-item {
+                flex-direction: column !important;
+            }
+
+            .timeline-item-content {
+                width: 100%;
+            }
+
+            .timeline-line {
+                left: 20px;
+            }
+
+            .timeline-dot {
+                left: 20px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form-wrapper {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
 </head>
-
 <body>
-    <!-- Navbar -->
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Navigation -->
     <nav id="navbar">
         <div class="container nav-content">
-            <a href="#" class="logo">ETHAN <span>HUANG</span></a>
+            <a href="#" class="logo">Ethan <span>Huang</span></a>
             <ul class="nav-links">
-                <li><a href="#about" class="active">About</a></li>
-                <li><a href="#timeline">Career</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#career">Career</a></li>
                 <li><a href="#philosophy">Philosophy</a></li>
-                <li><a href="#expertise">Expertise</a></li>
                 <li><a href="#impact">Impact</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="mobile-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
         </div>
     </nav>
 
-    <!-- Hero -->
-    <header class="hero">
+    <!-- Hero Section -->
+    <section class="hero">
         <div class="container hero-content">
-            <div class="hero-left">
-                <span class="hero-subtitle">FOUNDER & CHIEF INVESTMENT OFFICER</span>
-                <h1 class="hero-title">Bridging Traditional Finance & <br>Digital Assets</h1>
+            <div class="hero-text">
+                <p class="hero-subtitle">Founder & Chief Investment Officer</p>
+                <h1 class="hero-title">Ethan Huang<br>(Huang Macheng)</h1>
+                <div class="hero-info">
+                    <div class="hero-info-item"><span>📍</span> Singapore / Hong Kong / New York</div>
+                    <div class="hero-info-item"><span>🎂</span> Age 55</div>
+                    <div class="hero-info-item"><span>🇸</span> Singaporean</div>
+                </div>
                 <p class="hero-description">
-                    With over 30 years of experience in global asset management, I help institutional capital navigate
-                    the transition to the next generation of financial infrastructure.
+                    A bridge figure connecting traditional finance and the crypto world. 
+                    Over three decades of experience in global asset management, risk management, 
+                    and strategic investment advisory across Asia, Europe, and North America.
                 </p>
-                <div class="hero-actions">
-                    <a href="#contact" class="btn btn-primary">Strategic Consultation</a>
-                    <a href="#about" class="btn btn-outline">Explore Vision</a>
+                <div class="hero-cta">
+                    <a href="#contact" class="btn btn-primary">Get in Touch</a>
+                    <a href="#about" class="btn btn-outline">Learn More</a>
                 </div>
             </div>
-            <div class="hero-right">
+            <div class="hero-image">
                 <div class="hero-image-wrapper">
-                    <img src="https://image.qwenlm.ai/public_source/32f357c9-d67e-416f-9ad3-ed287c1facc4/161459856-a36b-492c-b2b4-b1d73afc694e.png"
-                        alt="Ethan Huang">
+                    <img src="https://image.qwenlm.ai/public_source/32f357c9-d67e-416f-9ad3-ed287c1facc4/161459856-a36b-492c-b2b4-b1d73afc694e.png" alt="Ethan Huang">
                 </div>
             </div>
         </div>
-    </header>
+    </section>
 
-    <!-- About -->
-    <section id="about">
-        <div class="container about-content">
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
             <div class="section-header">
-                <span class="section-subtitle">ABOUT ME</span>
+                <p class="section-subtitle">About Me</p>
                 <h2 class="section-title">A Legacy of Disciplined Investing</h2>
             </div>
-            <div class="card about-card glass">
-                <div class="about-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;">
-                    <div class="about-text">
-                        <h3>Building Wealth Through Discipline & Long-Term Vision</h3>
-                        <p style="margin-bottom:1.5rem;color:var(--text-muted);">
-                            Born into a middle-class family in Singapore that placed a strong emphasis on education, I
-                            developed an early interest in capital flows, risk management, and macroeconomics during
-                            Singapore's emergence as an international financial hub in the early 1990s.
-                        </p>
-                        <p style="color:var(--text-muted);">
-                            In 1989, I enrolled at Nanyang Technological University (NTU), majoring in Engineering and
-                            Applied Mathematics. During my university years, I demonstrated a strong interest in
-                            quantitative analysis, system modeling, and uncertainty analysis.
-                        </p>
-                    </div>
-                    <div class="about-stats" style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;">
-                        <div class="stat-item">
-                            <h4 style="color:var(--accent-gold);font-size:2.5rem;margin-bottom:0.5rem;">30+</h4>
-                            <p
-                                style="font-size:0.8rem;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);">
-                                Years Experience</p>
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="https://image.qwenlm.ai/public_source/32f357c9-d67e-416f-9ad3-ed287c1facc4/1d0c76ea1-484b-4c45-b483-cd7747513057.png" alt="Executive Office">
+                </div>
+                <div class="about-content">
+                    <h3>Building Wealth Through Discipline & Long-Term Vision</h3>
+                    <p>
+                        Born into a middle-class family in Singapore that placed a strong emphasis on 
+                        education, I developed an early interest in capital flows, risk management, 
+                        and macroeconomics during Singapore's emergence as an international financial 
+                        hub in the early 1990s.
+                    </p>
+                    <p>
+                        In 1989, I enrolled at Nanyang Technological University (NTU), majoring in 
+                        Engineering and Applied Mathematics. During my university years, I demonstrated 
+                        a strong interest in quantitative analysis, system modeling, and uncertainty 
+                        analysis, which later became the foundation of my expertise in risk management 
+                        and asset allocation.
+                    </p>
+                    <p>
+                        After graduation, rather than pursuing an academic career, I chose to enter 
+                        the financial industry directly to understand "real-world risk" from the 
+                        market itself.
+                    </p>
+                    <div class="about-details">
+                        <div class="about-detail-item">
+                            <div class="about-detail-label">Education</div>
+                            <div class="about-detail-value">NTU Singapore</div>
                         </div>
-                        <div class="stat-item">
-                            <h4 style="color:var(--accent-gold);font-size:2.5rem;margin-bottom:0.5rem;">$10B+</h4>
-                            <p
-                                style="font-size:0.8rem;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);">
-                                Assets Managed</p>
+                        <div class="about-detail-item">
+                            <div class="about-detail-label">Fields</div>
+                            <div class="about-detail-value">Engineering & Applied Mathematics</div>
+                        </div>
+                        <div class="about-detail-item">
+                            <div class="about-detail-label">Current Role</div>
+                            <div class="about-detail-value">Founder & CIO, GlobalVision</div>
+                        </div>
+                        <div class="about-detail-item">
+                            <div class="about-detail-label">Specialization</div>
+                            <div class="about-detail-value">Risk Management & Asset Allocation</div>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="about-stats">
+                <div class="stat-card">
+                    <span class="stat-number" data-target="32">0</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" data-target="4">0</span>
+                    <span class="stat-label">Global Regions</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" data-target="5">0</span>
+                    <span class="stat-label">Major Institutions</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" data-target="1989">0</span>
+                    <span class="stat-label">Career Started</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Career Timeline -->
-    <section id="timeline" style="background:rgba(255,255,255,0.01);">
+    <section class="timeline" id="career">
         <div class="container">
             <div class="section-header">
-                <span class="section-subtitle">CAREER JOURNEY</span>
+                <p class="section-subtitle">Career Journey</p>
                 <h2 class="section-title">Professional Milestones</h2>
             </div>
-            <div id="timeline-container" style="position:relative;">
-                <!-- Items injected by JS -->
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+                
+                <!-- Item 1 -->
+                <div class="timeline-item" onclick="openTimelineModal(0)">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-item-content">
+                        <div class="timeline-item-image">
+                            <img src="https://image.qwenlm.ai/public_source/32f357c9-d67e-416f-9ad3-ed287c1facc4/1975901ad-89b4-41af-8997-5549ed51c0d9.png" alt="NTU Campus">
+                            <span class="timeline-item-badge">Education</span>
+                        </div>
+                        <div class="timeline-item-body">
+                            <span class="timeline-year">1989 - 1993</span>
+                            <h3 class="timeline-title">Education Foundation</h3>
+                            <p class="timeline-description">
+                                Nanyang Technological University, Singapore. Engineering and Applied 
+                                Mathematics with focus on quantitative analysis and system modeling.
+                            </p>
+                            <span class="timeline-cta">Click to view details <span>→</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="timeline-item" onclick="openTimelineModal(1)">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-item-content">
+                        <div class="timeline-item-image">
+                            <img src="https://image.qwenlm.ai/public_source/32f357c9-d67e-416f-9ad3-ed287c1facc4/1f6d42b92-fea5-4148-b498-7cffc9dff69d.png" alt="J.P. Morgan Office">
+                            <span class="timeline-item-badge">Investment Banking</span>
+                        </div>
+                        <div class="timeline-item-body">
+                            <span class="timeline-year">1993 - 2000</span>
+                            <h3 class="timeline-title">J.P. Morgan (Asia-Pacific)</h3>
+                            <p class="timeline-description">
+                                Fixed income and interest rate derivatives division. Risk assessment 
+                                and portfolio measurement for institutional clients.
+                            </p>
+                            <span class="timeline-cta">Click to view details <span>→</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="timeline-item" onclick="openTimelineModal(2)">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-item-content">
+                        <div class="timeline-item-image">
+                            <img src="https://image.qwenlm.ai/public_source/32f357c9-d67e-416f-9ad3-ed287c1facc4/13b2ba9d8-67c4-4172-9f5a-ef82d605cf25.png" alt="UBS Singapore">
+                            <span class="timeline-item-badge">Asset Management</span>
+                        </div>
+                        <div class="timeline-item-body">
+                            <span class="timeline-year">2000 - 2003</span>
+                            <h3 class="timeline-title">UBS Asset Management</h3>
+                            <p class="timeline-description">
+                                Portfolio Risk Manager. Managing multi-asset portfolio risk exposure 
+                                and stress testing for institutional clients.
+                            </p>
+                            <span class="timeline-cta">Click to view details <span>→</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="timeline-item" onclick="openTimelineModal(3)">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-item-content">
+                        <div class="timeline-item-image">
+                            <img src="https://image.qwenlm.ai/public_source/32f357c9-d67e-416f-9ad3-ed287c1facc4/1a19caeb1-16aa-41f9-a1bb-006447f21e1b.png" alt="London Financial District">
+                            <span class="timeline-item-badge">Global Expansion</span>
+                        </div>
+                        <div class="timeline-item-body">
+                            <span class="timeline-year">2003 - 2014</span>
+                            <h3 class="timeline-title">Global Expansion</h3>
+                            <p class="timeline-description">
+                                London and New York assignments. Global macro asset allocation and 
+                                sovereign wealth fund advisory at BlackRock and State Street.
+                            </p>
+                            <span class="timeline-cta">Click to view details <span>→</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="timeline-item" onclick="openTimelineModal(4)">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-item-content">
+                        <div class="timeline-item-image">
+                            <img src="https://image.qwenlm.ai/public_source/32f357c9-d67e-416f-9ad3-ed287c1facc4/1bf4952fa-852e-4250-92b5-acea0b85d907.png" alt="Bitcoin Blockchain">
+                            <span class="timeline-item-badge">Digital Assets</span>
+                        </div>
+                        <div class="timeline-item-body">
+                            <span class="timeline-year">2014 - 2018</span>
+                            <h3 class="timeline-title">Digital Assets Pioneer</h3>
+                            <p class="timeline-description">
+                                Systematic research on Bitcoin and blockchain. Digital Assets Strategy 
+                                Advisor with focus on risk modeling and regulatory frameworks.
+                            </p>
+                            <span class="timeline-cta">Click to view details <span>→</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="timeline-item" onclick="openTimelineModal(5)">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-item-content">
+                        <div class="timeline-item-image">
+                            <img src="https://image.qwenlm.ai/public_source/32f357c9-d67e-416f-9ad3-ed287c1facc4/17a05581b-fdb1-4dd2-bafb-2fe8085b627f.png" alt="GlobalVision Office">
+                            <span class="timeline-item-badge">Entrepreneurship</span>
+                        </div>
+                        <div class="timeline-item-body">
+                            <span class="timeline-year">2019 - Present</span>
+                            <h3 class="timeline-title">GlobalVision Capital</h3>
+                            <p class="timeline-description">
+                                Founded GlobalVision Capital in Singapore. Integrating traditional 
+                                and digital assets with focus on strategic allocation and risk management.
+                            </p>
+                            <span class="timeline-cta">Click to view details <span>→</span></span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Philosophy -->
-    <section id="philosophy">
+    <!-- Enhanced Philosophy Section -->
+    <section class="philosophy" id="philosophy">
         <div class="container">
             <div class="section-header">
-                <span class="section-subtitle">INVESTMENT PHILOSOPHY</span>
+                <p class="section-subtitle">Investment Philosophy</p>
                 <h2 class="section-title">Core Principles</h2>
             </div>
-            <div class="philosophy-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem;">
-                <div class="card glass">
-                    <h3 style="color:var(--accent-gold);margin-bottom:1.5rem;">Risk Before Returns</h3>
-                    <p style="color:var(--text-muted);font-size:0.95rem;">Risk is not price volatility, but structural
-                        mistakes. True investing means maintaining control amid uncertainty.</p>
+            <div class="philosophy-grid">
+                <!-- Principle 1: Risk Before Returns -->
+                <div class="philosophy-card" onclick="openPhilosophyModal(0)">
+                    <div class="philosophy-icon-wrapper">
+                        <svg class="philosophy-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 6c1.4 0 2.8 1.1 2.8 2.5V11c.6 0 1.2.6 1.2 1.2v3.5c0 .7-.6 1.3-1.2 1.3H9.2c-.6 0-1.2-.6-1.2-1.2v-3.5c0-.7.6-1.3 1.2-1.3V9.5C9.2 8.1 10.6 7 12 7zm0 1c-.8 0-1.5.7-1.5 1.5V11h3V9.5c0-.8-.7-1.5-1.5-1.5z"/>
+                            <path d="M12 14c-.8 0-1.5.7-1.5 1.5s.7 1.5 1.5 1.5 1.5-.7 1.5-1.5-.7-1.5-1.5-1.5z"/>
+                        </svg>
+                    </div>
+                    <h3>Risk Before Returns</h3>
+                    <p>
+                        Risk is not price volatility, but structural mistakes. 
+                        True investing means maintaining control amid uncertainty.
+                    </p>
+                    <span class="philosophy-cta">Learn more <span>→</span></span>
                 </div>
-                <div class="card glass">
-                    <h3 style="color:var(--accent-gold);margin-bottom:1.5rem;">Disciplined Approach</h3>
-                    <p style="color:var(--text-muted);font-size:0.95rem;">Highly disciplined, institutional in
-                        structure, transparent and explainable. We study market structures.</p>
+
+                <!-- Principle 2: Disciplined Approach -->
+                <div class="philosophy-card" onclick="openPhilosophyModal(1)">
+                    <div class="philosophy-icon-wrapper">
+                        <svg class="philosophy-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/>
+                            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z"/>
+                        </svg>
+                    </div>
+                    <h3>Disciplined Approach</h3>
+                    <p>
+                        Highly disciplined, institutional in structure, 
+                        transparent and explainable. We study market structures.
+                    </p>
+                    <span class="philosophy-cta">Learn more <span>→</span></span>
                 </div>
-                <div class="card glass">
-                    <h3 style="color:var(--accent-gold);margin-bottom:1.5rem;">Bridge Two Worlds</h3>
-                    <p style="color:var(--text-muted);font-size:0.95rem;">The future belongs to long-term capital that
-                        understands how traditional and crypto systems work together.</p>
+
+                <!-- Principle 3: Bridge Two Worlds -->
+                <div class="philosophy-card" onclick="openPhilosophyModal(2)">
+                    <div class="philosophy-icon-wrapper">
+                        <svg class="philosophy-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                        </svg>
+                    </div>
+                    <h3>Bridge Two Worlds</h3>
+                    <p>
+                        The future of finance belongs to long-term capital that 
+                        understands how traditional and crypto systems work together.
+                    </p>
+                    <span class="philosophy-cta">Learn more <span>→</span></span>
                 </div>
+            </div>
+            <div class="philosophy-quote">
+                <blockquote>
+                    Markets will always be uncertain, but risk can be understood and managed. 
+                    True investment success is not about short-term profits, but about managing 
+                    capital steadily and sustainably within a complex world.
+                </blockquote>
+                <cite>— Ethan Huang</cite>
             </div>
         </div>
     </section>
 
-    <!-- Contact -->
-    <section id="contact">
+    <!-- Philosophy Modal -->
+    <div class="philosophy-modal-overlay" id="philosophyModalOverlay" onclick="closePhilosophyModal(event)">
+        <div class="philosophy-modal-content" onclick="event.stopPropagation()">
+            <button class="philosophy-modal-close" onclick="closePhilosophyModal()">×</button>
+            <div class="philosophy-modal-header">
+                <div class="philosophy-modal-icon" id="modalPhilosophyIcon"></div>
+                <h3 class="philosophy-modal-title" id="modalPhilosophyTitle"></h3>
+                <p class="philosophy-modal-subtitle" id="modalPhilosophySubtitle"></p>
+            </div>
+            <div class="philosophy-modal-body">
+                <div class="philosophy-modal-section">
+                    <h4 class="philosophy-modal-section-title">Core Principle</h4>
+                    <p class="philosophy-modal-text" id="modalPhilosophyCore"></p>
+                </div>
+                <div class="philosophy-modal-section">
+                    <h4 class="philosophy-modal-section-title">Application in Practice</h4>
+                    <ul class="philosophy-modal-list" id="modalPhilosophyApplication"></ul>
+                </div>
+                <div class="philosophy-modal-section">
+                    <h4 class="philosophy-modal-section-title">Why This Matters</h4>
+                    <p class="philosophy-modal-text" id="modalPhilosophyWhy"></p>
+                </div>
+                <div class="philosophy-modal-quote">
+                    <blockquote id="modalPhilosophyQuote"></blockquote>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enhanced Expertise Section with Images -->
+    <section class="expertise" id="expertise">
         <div class="container">
             <div class="section-header">
-                <span class="section-subtitle">GET IN TOUCH</span>
-                <h2 class="section-title">Direct Consultation</h2>
+                <p class="section-subtitle">Areas of Expertise</p>
+                <h2 class="section-title">Professional Competencies</h2>
             </div>
-            <div class="card glass" style="max-width:800px;margin:0 auto;">
-                <form id="contact-form" style="display:grid;gap:2rem;">
-                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;">
-                        <input type="text" placeholder="FULL NAME" required
-                            style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);padding:1.2rem;color:white;border-radius:4px;">
-                        <input type="email" placeholder="EMAIL ADDRESS" required
-                            style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);padding:1.2rem;color:white;border-radius:4px;">
+            <div class="expertise-grid">
+                <!-- Item 1: Traditional Asset Management -->
+                <div class="expertise-item" onclick="openExpertiseModal(0)">
+                    <div class="expertise-item-image">
+                        <img src="https://image.qwenlm.ai/g/1a2b3c4d-5e6f-7g8h-9i0j-1k2l3m4n5o6p/T1a2B3c4D5e6F7g8H9i0J.jpg" alt="Traditional Asset Management - Stock Market Trading Floor">
+                        <span class="expertise-item-number">01</span>
                     </div>
-                    <textarea placeholder="MESSAGE" required rows="6"
-                        style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);padding:1.2rem;color:white;border-radius:4px;"></textarea>
-                    <button type="submit" class="btn btn-primary" style="border:none;cursor:pointer;">Send
-                        Inquiry</button>
-                </form>
+                    <div class="expertise-item-body">
+                        <h3>Traditional Asset Management</h3>
+                        <p>Deep expertise in global equities, fixed income, and alternative investments with institutional-grade risk frameworks developed through decades at J.P. Morgan, UBS, BlackRock, and State Street.</p>
+                        <span class="expertise-cta">Learn more <span>→</span></span>
+                    </div>
+                </div>
+
+                <!-- Item 2: Risk Management -->
+                <div class="expertise-item" onclick="openExpertiseModal(1)">
+                    <div class="expertise-item-image">
+                        <img src="https://image.qwenlm.ai/g/2b3c4d5e-6f7g-8h9i-0j1k-2l3m4n5o6p7q/T2b3C4d5E6f7G8h9I0j1K.jpg" alt="Risk Management - Financial Analytics Dashboard">
+                        <span class="expertise-item-number">02</span>
+                    </div>
+                    <div class="expertise-item-body">
+                        <h3>Risk Management</h3>
+                        <p>Systematic risk assessment, stress testing, and scenario analysis developed through multiple financial crises including the 1997 Asian Financial Crisis and 2008 Global Financial Crisis.</p>
+                        <span class="expertise-cta">Learn more <span>→</span></span>
+                    </div>
+                </div>
+
+                <!-- Item 3: Global Asset Allocation -->
+                <div class="expertise-item" onclick="openExpertiseModal(2)">
+                    <div class="expertise-item-image">
+                        <img src="https://image.qwenlm.ai/g/3c4d5e6f-7g8h-9i0j-1k2l-3m4n5o6p7q8r/T3c4D5e6F7g8H9i0J1k2L.jpg" alt="Global Asset Allocation - World Map Financial Markets">
+                        <span class="expertise-item-number">03</span>
+                    </div>
+                    <div class="expertise-item-body">
+                        <h3>Global Asset Allocation</h3>
+                        <p>Cross-regional asset correlation analysis and strategic allocation for sovereign wealth funds and family offices across Asia, Europe, and North America with deep understanding of macroeconomic trends.</p>
+                        <span class="expertise-cta">Learn more <span>→</span></span>
+                    </div>
+                </div>
+
+                <!-- Item 4: Crypto Assets & Digital Finance -->
+                <div class="expertise-item" onclick="openExpertiseModal(3)">
+                    <div class="expertise-item-image">
+                        <img src="https://image.qwenlm.ai/g/4d5e6f7g-8h9i-0j1k-2l3m-4n5o6p7q8r9s/T4d5E6f7G8h9I0j1K2l3M.jpg" alt="Crypto Assets Digital Finance - Blockchain Technology">
+                        <span class="expertise-item-number">04</span>
+                    </div>
+                    <div class="expertise-item-body">
+                        <h3>Crypto Assets & Digital Finance</h3>
+                        <p>Strategic exposure to digital assets, blockchain infrastructure investments, and risk-managed integration with traditional portfolios. Pioneer in institutional digital asset frameworks since 2014.</p>
+                        <span class="expertise-cta">Learn more <span>→</span></span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer>
+    <!-- Social Impact Section -->
+    <section class="impact" id="impact">
         <div class="container">
-            <a href="#" class="footer-logo">ETHAN <span>HUANG</span></a>
-            <p class="footer-text">© 2024 GlobalVision Capital. All rights reserved.</p>
+            <div class="section-header">
+                <p class="section-subtitle">Social Responsibility</p>
+                <h2 class="section-title">Beyond Capital: Long-Term Social Impact</h2>
+            </div>
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <span class="impact-icon">🎓</span>
+                    <h3>Education Support</h3>
+                    <p>
+                        Since 2012, supporting scholarship programs at NTU, NUS, and HKUST 
+                        for students in Financial Engineering, Data Science, and Computer Science 
+                        from ordinary family backgrounds.
+                    </p>
+                    <ul class="impact-list">
+                        <li>Anonymous scholarship programs</li>
+                        <li>Focus on mathematics & technology talent</li>
+                        <li>Financial literacy initiatives</li>
+                        <li>Entrepreneur training in Southeast Asia</li>
+                    </ul>
+                </div>
+                <div class="impact-card">
+                    <span class="impact-icon">🏥</span>
+                    <h3>Medical Technology</h3>
+                    <p>
+                        Supporting medical technology innovation and public health initiatives 
+                        through family office and GlobalVision-associated funds.
+                    </p>
+                    <ul class="impact-list">
+                        <li>AI-powered medical imaging research</li>
+                        <li>Early cancer detection technologies</li>
+                        <li>Telemedicine infrastructure</li>
+                        <li>Healthcare solutions for aging populations</li>
+                    </ul>
+                </div>
+                <div class="impact-card">
+                    <span class="impact-icon">🚀</span>
+                    <h3>Technology Innovation</h3>
+                    <p>
+                        Supporting startup accelerators and innovation labs, providing young 
+                        teams with seed investment and risk management advisory.
+                    </p>
+                    <ul class="impact-list">
+                        <li>FinTech & Blockchain infrastructure</li>
+                        <li>Artificial Intelligence</li>
+                        <li>Medical Technology</li>
+                        <li>Technology-driven founders</li>
+                    </ul>
+                </div>
+                <div class="impact-card">
+                    <span class="impact-icon">🤝</span>
+                    <h3>Financial Inclusion</h3>
+                    <p>
+                        Believing that financial knowledge should not belong only to Wall Street, 
+                        supporting financial literacy programs across multiple regions.
+                    </p>
+                    <ul class="impact-list">
+                        <li>Investment education for youth</li>
+                        <li>Risk management for entrepreneurs</li>
+                        <li>SME financial planning education</li>
+                        <li>Programs in Singapore, Malaysia, Philippines</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industry Contributions -->
+    <section class="contributions">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-subtitle">Industry Impact</p>
+                <h2 class="section-title">Bridging Two Generations of Finance</h2>
+            </div>
+            <div class="contributions-grid">
+                <div class="contribution-card" onclick="openContributionModal(0)">
+                    <span class="contribution-number">01</span>
+                    <h3>Promoting Institutional Understanding of Digital Assets</h3>
+                    <p>
+                        Between 2016-2020, shared insights at closed-door institutional meetings, 
+                        emphasizing digital assets as financial infrastructure, not speculation.
+                    </p>
+                    <span class="expertise-cta" style="margin-top: 1rem;">Learn more <span>→</span></span>
+                </div>
+                <div class="contribution-card" onclick="openContributionModal(1)">
+                    <span class="contribution-number">02</span>
+                    <h3>Digital Asset Risk Management Frameworks</h3>
+                    <p>
+                        Designed institutional-level risk assessment models for cryptocurrency 
+                        volatility, liquidity, market structure, and regulatory uncertainty.
+                    </p>
+                    <span class="expertise-cta" style="margin-top: 1rem;">Learn more <span>→</span></span>
+                </div>
+                <div class="contribution-card" onclick="openContributionModal(2)">
+                    <span class="contribution-number">03</span>
+                    <h3>Facilitating Traditional Capital into New Finance</h3>
+                    <p>
+                        Helped family offices, asset managers, and HNW investors understand 
+                        and access digital assets with emphasis on understanding risks first.
+                    </p>
+                    <span class="expertise-cta" style="margin-top: 1rem;">Learn more <span>→</span></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-subtitle">Get in Touch</p>
+                <h2 class="section-title">Connect With Me</h2>
+            </div>
+            <div class="contact-container">
+                <!-- Contact Info Side -->
+                <div class="contact-info">
+                    <h3>Let's Start a Conversation</h3>
+                    <p>
+                        I believe meaningful conversations begin with trust and clarity. 
+                        For partnership discussions, strategic consultations, or investment 
+                        inquiries, please reach out through the channels below.
+                    </p>
+
+                    <!-- Contact Methods -->
+                    <div class="contact-methods">
+                        <!-- Email -->
+                        <div class="contact-method" onclick="copyEmail()">
+                            <div class="contact-method-icon">📧</div>
+                            <div class="contact-method-content">
+                                <div class="contact-method-label">Email</div>
+                                <div class="contact-method-value">
+                                    <a href="mailto:ethanlim@globalvisionwealth.com">ethanlim@globalvisionwealth.com</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Locations -->
+                        <div class="contact-method">
+                            <div class="contact-method-icon">📍</div>
+                            <div class="contact-method-content">
+                                <div class="contact-method-label">Locations</div>
+                                <div class="contact-method-value">Singapore | Hong Kong | New York</div>
+                            </div>
+                        </div>
+
+                        <!-- Availability -->
+                        <div class="contact-method">
+                            <div class="contact-method-icon">📞</div>
+                            <div class="contact-method-content">
+                                <div class="contact-method-label">Availability</div>
+                                <div class="contact-method-value">By appointment only</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Location Cards -->
+                    <div class="locations-section">
+                        <h4>Office Locations</h4>
+                        <div class="location-cards">
+                            <div class="location-card" onclick="openLocationMap('singapore')">
+                                <span class="location-card-icon">🇸🇬</span>
+                                <div class="location-card-city">Singapore</div>
+                                <div class="location-card-region">Headquarters</div>
+                            </div>
+                            <div class="location-card" onclick="openLocationMap('hongkong')">
+                                <span class="location-card-icon">🇭🇰</span>
+                                <div class="location-card-city">Hong Kong</div>
+                                <div class="location-card-region">Asia Pacific</div>
+                            </div>
+                            <div class="location-card" onclick="openLocationMap('newyork')">
+                                <span class="location-card-icon">🇺🇸</span>
+                                <div class="location-card-city">New York</div>
+                                <div class="location-card-region">North America</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Availability Schedule -->
+                    <div class="availability-section">
+                        <h4>Meeting Availability</h4>
+                        <p class="availability-info">
+                            All consultations are conducted by appointment to ensure dedicated attention to each client's needs.
+                        </p>
+                        <div class="availability-schedule">
+                            <div class="availability-item">
+                                <span>📅</span>
+                                <div>Monday - Friday</div>
+                            </div>
+                            <div class="availability-item">
+                                <span>🕐</span>
+                                <div>9:00 AM - 6:00 PM</div>
+                            </div>
+                            <div class="availability-item">
+                                <span>🌏</span>
+                                <div>SGT / HKT / EST</div>
+                            </div>
+                            <div class="availability-item">
+                                <span>💼</span>
+                                <div>In-person / Virtual</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form Side -->
+                <div class="contact-form-wrapper">
+                    <div class="form-header">
+                        <h4>Send a Message</h4>
+                        <p>Fill out the form below and I will respond within 24-48 hours.</p>
+                    </div>
+
+                    <!-- Form -->
+                    <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required placeholder="John Doe">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required placeholder="john@example.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number (Optional)</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+65 9123 4567">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select a topic</option>
+                                <option value="investment">Investment Inquiry</option>
+                                <option value="consultation">Strategic Consultation</option>
+                                <option value="partnership">Partnership Discussion</option>
+                                <option value="media">Media Inquiry</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" required placeholder="Please describe your inquiry..."></textarea>
+                        </div>
+
+                        <div class="form-submit">
+                            <button type="submit" class="btn btn-primary" id="submitBtn">
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- Success Message -->
+                    <div class="form-success" id="formSuccess">
+                        <div class="success-icon">✓</div>
+                        <h4>Message Sent Successfully!</h4>
+                        <p>
+                            Thank you for reaching out. Your consultation request has been received 
+                            and will be reviewed shortly.
+                        </p>
+                        <div class="form-success-email">
+                            📧 A confirmation email will be sent to:<br>
+                            <strong id="confirmationEmail"></strong>
+                        </div>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">
+                            Expected response time: 24-48 hours<br>
+                            For urgent matters, please email directly at<br>
+                            <a href="mailto:ethanlim@globalvisionwealth.com" style="color: var(--accent-gold);">ethanlim@globalvisionwealth.com</a>
+                        </p>
+                        <button class="btn" onclick="resetForm()" style="margin-top: 1.5rem;">
+                            Send Another Message
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">Ethan <span>Huang</span></div>
+            <p class="footer-text">© 2024 Ethan Huang. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" aria-label="LinkedIn">in</a>
+                <a href="#" aria-label="Twitter">𝕏</a>
+                <a href="#" aria-label="Email">✉</a>
+            </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
-</body>
+    <script>
+        // Timeline Data
+        const timelineData = [
+            {
+                year: "1989 - 1993",
+                title: "Education Foundation",
+                description: "Nanyang Technological University (NTU), Singapore. Major in Engineering and Applied Mathematics with focus on quantitative analysis, system modeling, and uncertainty analysis.",
+                image: "https://image.qwenlm.ai/public_source/32f357c9-d67e-416f-9ad3-ed287c1facc4/1975901ad-89b4-41af-8997-5549ed51c0d9.png",
+                badge: "Education",
+                details: [
+                    { label: "Institution", value: "Nanyang Technological University (NTU)" },
+                    { label: "Location", value: "Singapore" },
+                    { label: "Degree", value: "Engineering and Applied Mathematics" },
+                    { label: "Focus Areas", value: "Quantitative Analysis, System Modeling, Uncertainty Analysis" }
+                ],
+                responsibilities: [
+                    "Developed strong foundation in mathematical modeling and statistical analysis",
+                    "Early interest in capital flows, risk management, and macroeconomics",
+                    "Studied during Singapore's emergence as international financial hub",
+                    "Prepared for career in financial risk management and asset allocation"
+                ],
+                achievements: [
+                    "Strong academic performance in quantitative subjects",
+                    "Developed analytical thinking that would shape investment philosophy",
+                    "Built foundation for understanding complex financial systems"
+                ],
+                quote: "I chose to enter the financial industry directly to understand 'real-world risk' from the market itself, rather than pursuing an academic career."
+            },
+            {
+                year: "1993 - 2000",
+                title: "J.P. Morgan (Asia-Pacific)",
+                description: "Joined J.P. Morgan in Singapore's fixed income and interest rate derivatives division. Gained systematic understanding of how banks manage risk in complex markets.",
+                image: "https://image.qwenlm.ai/public_source/32f357c9-d67e-416f-9ad3-ed287c1facc4/1f6d42b92-fea5-4148-b498-7cffc9dff69d.png",
+                badge: "Investment Banking",
+                details: [
+                    { label: "Company", value: "J.P. Morgan" },
+                    { label: "Division", value: "Fixed Income & Interest Rate Derivatives" },
+                    { label: "Location", value: "Singapore (Asia-Pacific)" },
+                    { label: "Role", value: "Risk Analyst" }
+                ],
+                responsibilities: [
+                    "Interest rate and foreign exchange product analysis",
+                    "Asset-liability risk assessment",
+                    "Portfolio risk measurement for institutional clients",
+                    "Systematic understanding of bank risk management in complex markets"
+                ],
+                achievements: [
+                    "Witnessed 1997 Asian Financial Crisis firsthand",
+                    "Learned how high-yield models collapse when liquidity disappears",
+                    "Shifted focus toward risk control and long-term asset allocation"
+                ],
+                quote: "The 1997 Asian Financial Crisis had a profound impact on my professional outlook. I witnessed how many high-yield models collapsed when liquidity disappeared."
+            },
+            {
+                year: "2000 - 2003",
+                title: "UBS Asset Management",
+                description: "Portfolio Risk Manager in Singapore and Hong Kong. Managed risk exposure across multi-asset portfolios and conducted stress testing under various market scenarios.",
+                image: "https://image.qwenlm.ai/public_source/32f357c9-d67e-416f-9ad3-ed287c1facc4/13b2ba9d8-67c4-4172-9f5a-ef82d605cf25.png",
+                badge: "Asset Management",
+                details: [
+                    { label: "Company", value: "UBS Asset Management" },
+                    { label: "Position", value: "Portfolio Risk Manager" },
+                    { label: "Locations", value: "Singapore / Hong Kong" },
+                    { label: "Focus", value: "Multi-Asset Portfolio Risk" }
+                ],
+                responsibilities: [
+                    "Managing risk exposure across multi-asset portfolios",
+                    "Conducting stress testing under various market scenarios",
+                    "Designing stable asset allocation strategies for institutional clients",
+                    "Risk control framework development"
+                ],
+                achievements: [
+                    "Developed expertise in institutional risk management",
+                    "Designed stable asset allocation strategies",
+                    "Managed institutional client portfolios across Asia"
+                ],
+                quote: "Risk is not volatility — it is permanent capital loss. This principle became central to my investment philosophy."
+            },
+            {
+                year: "2003 - 2014",
+                title: "Global Expansion",
+                description: "Assigned to London and New York, participating in global macro asset allocation and advisory projects for sovereign wealth funds and family offices.",
+                image: "https://image.qwenlm.ai/public_source/32f357c9-d67e-416f-9ad3-ed287c1facc4/1a19caeb1-16aa-41f9-a1bb-006447f21e1b.png",
+                badge: "Global Expansion",
+                details: [
+                    { label: "Companies", value: "BlackRock / State Street Global Advisors" },
+                    { label: "Locations", value: "London / New York" },
+                    { label: "Level", value: "Senior Investment Professional" },
+                    { label: "Clients", value: "Sovereign Wealth Funds & Family Offices" }
+                ],
+                responsibilities: [
+                    "Global macro asset allocation",
+                    "Advisory projects for sovereign wealth funds and family offices",
+                    "Cross-regional asset correlation analysis",
+                    "Systemic risk management and long-term capital allocation"
+                ],
+                achievements: [
+                    "Recognized as institutional-style investor by 2010",
+                    "Deep expertise in traditional financial system",
+                    "Strong familiarity with regulation and compliance",
+                    "Real-world experience from multiple financial crises"
+                ],
+                quote: "By 2010, I had become widely recognized as an investment professional who specialized in long-term capital allocation and systemic risk management."
+            },
+            {
+                year: "2014 - 2018",
+                title: "Digital Assets Pioneer",
+                description: "Systematically researched Bitcoin and blockchain technology. Entry point was structural questions, not price speculation.",
+                image: "https://image.qwenlm.ai/public_source/32f357c9-d67e-416f-9ad3-ed287c1facc4/1bf4952fa-852e-4250-92b5-acea0b85d907.png",
+                badge: "Digital Assets",
+                details: [
+                    { label: "Focus", value: "Bitcoin & Blockchain Technology" },
+                    { label: "Role", value: "Digital Assets Strategy Advisor" },
+                    { label: "Expertise", value: "Risk Modeling for Crypto Assets" },
+                    { label: "Contribution", value: "Custody & Regulatory Framework Design" }
+                ],
+                responsibilities: [
+                    "Risk modeling for crypto assets as alternative asset class",
+                    "Design of custody and regulatory frameworks",
+                    "Correlation analysis between digital and traditional assets",
+                    "Advisory roles in crypto infrastructure companies"
+                ],
+                achievements: [
+                    "Transitioned from observer to participant in crypto ecosystem",
+                    "Helped institutions understand digital assets as infrastructure",
+                    "Designed institutional-level risk assessment models"
+                ],
+                quote: "Unlike many early speculators, my entry point was not price speculation but structural questions about decentralized settlement systems and borderless asset transfers."
+            },
+            {
+                year: "2019 - Present",
+                title: "GlobalVision Capital",
+                description: "Founded GlobalVision Capital in Singapore. Core thesis: The future of finance belongs to long-term capital that understands how traditional and crypto systems can operate together.",
+                image: "https://image.qwenlm.ai/public_source/32f357c9-d67e-416f-9ad3-ed287c1facc4/17a05581b-fdb1-4dd2-bafb-2fe8085b627f.png",
+                badge: "Entrepreneurship",
+                details: [
+                    { label: "Company", value: "GlobalVision Capital" },
+                    { label: "Position", value: "Founder & Chief Investment Officer" },
+                    { label: "Location", value: "Singapore" },
+                    { label: "Focus", value: "Strategic Asset Allocation" }
+                ],
+                responsibilities: [
+                    "Strategic asset allocation across traditional and digital assets",
+                    "High-net-worth and institutional client advisory",
+                    "Integration of traditional assets and digital assets",
+                    "Long-term investment framework where risk management precedes returns"
+                ],
+                achievements: [
+                    "Built bridge between two generations of finance",
+                    "Maintained low-profile but highly respected industry reputation",
+                    "Focus on internal research and one-on-one strategic consultations"
+                ],
+                quote: "The future of finance will belong neither to purely traditional finance nor purely crypto finance, but to long-term capital that understands how the two systems can operate together."
+            }
+        ];
 
+        // Philosophy Data
+        const philosophyData = [
+            {
+                icon: `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 6c1.4 0 2.8 1.1 2.8 2.5V11c.6 0 1.2.6 1.2 1.2v3.5c0 .7-.6 1.3-1.2 1.3H9.2c-.6 0-1.2-.6-1.2-1.2v-3.5c0-.7.6-1.3 1.2-1.3V9.5C9.2 8.1 10.6 7 12 7zm0 1c-.8 0-1.5.7-1.5 1.5V11h3V9.5c0-.8-.7-1.5-1.5-1.5z"/><path d="M12 14c-.8 0-1.5.7-1.5 1.5s.7 1.5 1.5 1.5 1.5-.7 1.5-1.5-.7-1.5-1.5-1.5z"/></svg>`,
+                title: "Risk Before Returns",
+                subtitle: "The Foundation of Capital Preservation",
+                core: "Risk is not price volatility, but structural mistakes. True investing means maintaining control amid uncertainty. The first responsibility of capital is survival.",
+                application: [
+                    "Comprehensive risk assessment before any investment decision",
+                    "Stress testing portfolios under multiple market scenarios",
+                    "Focus on permanent capital loss rather than short-term fluctuations",
+                    "Institutional-grade risk controls and monitoring systems"
+                ],
+                why: "In over three decades of navigating multiple financial crises, I have learned that preserving capital during downturns is more important than maximizing returns during upturns. This principle has protected client wealth through the Asian Financial Crisis, Dot-com Bubble, Global Financial Crisis, and COVID-19 market disruption.",
+                quote: "Markets will always be uncertain, but risk can be understood and managed."
+            },
+            {
+                icon: `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z"/></svg>`,
+                title: "Disciplined Approach",
+                subtitle: "Institutional Structure & Transparency",
+                core: "Highly disciplined, institutional in structure, transparent and explainable. We study market structures rather than chasing trends.",
+                application: [
+                    "Systematic investment process with clear decision frameworks",
+                    "Transparent reporting and communication with clients",
+                    "Research-driven decisions based on fundamental analysis",
+                    "Consistent application of investment principles across market cycles"
+                ],
+                why: "Discipline separates professional investors from speculators. Every investment decision at GlobalVision follows a structured process that can be explained, defended, and repeated. This approach has built trust with institutional clients and family offices who value consistency over short-term performance.",
+                quote: "True investment success comes from discipline applied consistently over time, not from predicting market movements."
+            },
+            {
+                icon: `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>`,
+                title: "Bridge Two Worlds",
+                subtitle: "Integrating Traditional & Digital Finance",
+                core: "The future of finance belongs to long-term capital that understands how traditional and crypto systems can operate together effectively.",
+                application: [
+                    "Strategic allocation across traditional and digital asset classes",
+                    "Risk-managed integration of blockchain infrastructure investments",
+                    "Understanding both regulatory frameworks and technological innovation",
+                    "Long-term perspective on financial system evolution"
+                ],
+                why: "Having worked in traditional finance for over two decades before entering the digital asset space, I understand both systems deeply. The future is not about choosing one over the other, but about understanding how they complement each other. This unique perspective allows us to guide clients through the evolution of finance with confidence.",
+                quote: "The future of finance will belong neither to purely traditional finance nor purely crypto finance, but to long-term capital that understands how the two systems can operate together."
+            }
+        ];
+
+        // Expertise Data
+        const expertiseData = [
+            {
+                title: "Traditional Asset Management",
+                subtitle: "Decades of Institutional Experience",
+                overview: "Deep expertise in global equities, fixed income, and alternative investments with institutional-grade risk frameworks developed through decades at J.P. Morgan, UBS, BlackRock, and State Street.",
+                details: [
+                    { label: "Experience", value: "30+ years across major financial institutions" },
+                    { label: "Focus Areas", value: "Global equities, fixed income, alternative investments" },
+                    { label: "Institutions", value: "J.P. Morgan, UBS, BlackRock, State Street" },
+                    { label: "Approach", value: "Institutional-grade risk frameworks" }
+                ],
+                expertise: [
+                    "Portfolio construction and asset allocation",
+                    "Institutional client advisory",
+                    "Regulatory compliance and governance",
+                    "Long-term value creation strategies"
+                ],
+                quote: "Traditional finance provides the foundation for understanding risk, regulation, and institutional processes."
+            },
+            {
+                title: "Risk Management",
+                subtitle: "Protecting Capital Through Crises",
+                overview: "Systematic risk assessment, stress testing, and scenario analysis developed through multiple financial crises including the 1997 Asian Financial Crisis and 2008 Global Financial Crisis.",
+                details: [
+                    { label: "Experience", value: "Multiple financial crises navigated" },
+                    { label: "Methodology", value: "Systematic stress testing & scenario analysis" },
+                    { label: "Focus", value: "Permanent capital loss prevention" },
+                    { label: "Framework", value: "Institutional-level risk controls" }
+                ],
+                expertise: [
+                    "Portfolio risk measurement and monitoring",
+                    "Stress testing under various market scenarios",
+                    "Liquidity risk management",
+                    "Asset-liability risk assessment"
+                ],
+                quote: "Risk is not volatility — it is permanent capital loss. This principle became central to my investment philosophy."
+            },
+            {
+                title: "Global Asset Allocation",
+                subtitle: "Cross-Regional Strategic Investment",
+                overview: "Cross-regional asset correlation analysis and strategic allocation for sovereign wealth funds and family offices across Asia, Europe, and North America with deep understanding of macroeconomic trends.",
+                details: [
+                    { label: "Regions", value: "Asia, Europe, North America" },
+                    { label: "Clients", value: "Sovereign wealth funds, family offices" },
+                    { label: "Focus", value: "Cross-regional asset correlation" },
+                    { label: "Approach", value: "Macroeconomic trend analysis" }
+                ],
+                expertise: [
+                    "Global macro asset allocation",
+                    "Cross-border investment strategies",
+                    "Currency and macro risk considerations",
+                    "Multi-generational wealth planning"
+                ],
+                quote: "By 2010, I had become widely recognized as an investment professional who specialized in long-term capital allocation and systemic risk management."
+            },
+            {
+                title: "Crypto Assets & Digital Finance",
+                subtitle: "Bridging Traditional and Digital Finance",
+                overview: "Strategic exposure to digital assets, blockchain infrastructure investments, and risk-managed integration with traditional portfolios. Pioneer in institutional digital asset frameworks since 2014.",
+                details: [
+                    { label: "Started", value: "2014 - Systematic Bitcoin research" },
+                    { label: "Focus", value: "Infrastructure over speculation" },
+                    { label: "Role", value: "Digital Assets Strategy Advisor" },
+                    { label: "Contribution", value: "Institutional frameworks design" }
+                ],
+                expertise: [
+                    "Digital asset risk modeling",
+                    "Blockchain infrastructure investments",
+                    "Regulatory framework design",
+                    "Traditional-digital asset integration"
+                ],
+                quote: "Unlike many early speculators, my entry point was not price speculation but structural questions about decentralized settlement systems and borderless asset transfers."
+            }
+        ];
+
+        // Contribution Data
+        const contributionData = [
+            {
+                title: "Promoting Institutional Understanding of Digital Assets",
+                subtitle: "2016 - 2020",
+                overview: "Between 2016 and 2020, Ethan frequently shared insights at closed-door institutional meetings and research forums, emphasizing that digital assets are not merely speculative instruments, but a new form of financial infrastructure.",
+                details: [
+                    { label: "Period", value: "2016 - 2020" },
+                    { label: "Focus", value: "Institutional education" },
+                    { label: "Message", value: "Digital assets as infrastructure" },
+                    { label: "Audience", value: "Closed-door institutional meetings" }
+                ],
+                impact: [
+                    "Helped institutions research digital asset custody systems",
+                    "Promoted institutional-grade compliance frameworks",
+                    "Advised on digital assets within asset allocation strategies",
+                    "Foundation for many institutions entering crypto market"
+                ],
+                quote: "Digital assets are not merely speculative instruments, but a new form of financial infrastructure."
+            },
+            {
+                title: "Digital Asset Risk Management Frameworks",
+                subtitle: "Institutional-Level Models",
+                overview: "Ethan has participated in designing institutional-level risk assessment models to evaluate cryptocurrency volatility risk, liquidity risk, market structure risk, and regulatory uncertainty.",
+                details: [
+                    { label: "Focus", value: "Risk assessment models" },
+                    { label: "Type", value: "Institutional-level frameworks" },
+                    { label: "Coverage", value: "Volatility, liquidity, market structure, regulation" },
+                    { label: "Adoption", value: "Referenced by family offices and institutions" }
+                ],
+                impact: [
+                    "Cryptocurrency volatility risk evaluation",
+                    "Liquidity risk assessment frameworks",
+                    "Market structure risk analysis",
+                    "Regulatory uncertainty modeling"
+                ],
+                quote: "Understand the risks first, then discuss the returns."
+            },
+            {
+                title: "Facilitating Traditional Capital into New Finance",
+                subtitle: "Bridging the Gap",
+                overview: "Through GlobalVision Capital, Ethan has helped many traditional investors gradually understand and access digital assets, including family offices, asset management institutions, and high-net-worth investors.",
+                details: [
+                    { label: "Vehicle", value: "GlobalVision Capital" },
+                    { label: "Clients", value: "Family offices, asset managers, HNW investors" },
+                    { label: "Approach", value: "Risk-first education" },
+                    { label: "Goal", value: "Safe digital asset integration" }
+                ],
+                impact: [
+                    "Family office digital asset integration",
+                    "Asset management institution advisory",
+                    "High-net-worth investor education",
+                    "Risk-managed portfolio construction"
+                ],
+                quote: "The future of finance will belong neither to purely traditional finance nor purely crypto finance, but to long-term capital that understands how the two systems can operate together."
+            }
+        ];
+
+        // Copy Email Function
+        function copyEmail() {
+            const email = 'ethanlim@globalvisionwealth.com';
+            navigator.clipboard.writeText(email).then(() => {
+                alert('Email copied to clipboard: ' + email);
+            }).catch(() => {
+                window.location.href = 'mailto:' + email;
+            });
+        }
+
+        // Open Location Map
+        function openLocationMap(location) {
+            const locations = {
+                singapore: 'https://www.google.com/maps/search/Singapore+Financial+District',
+                hongkong: 'https://www.google.com/maps/search/Hong+Kong+Central',
+                newyork: 'https://www.google.com/maps/search/New+York+Wall+Street'
+            };
+            if (locations[location]) {
+                window.open(locations[location], '_blank');
+            }
+        }
+
+        // Form Submission Handler - FIXED
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            const form = document.getElementById('contactForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const formSuccess = document.getElementById('formSuccess');
+            const confirmationEmail = document.getElementById('confirmationEmail');
+            
+            // Get form data
+            const formData = new FormData(form);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const subject = formData.get('subject');
+            const message = formData.get('message');
+            
+            // Show loading state
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            submitBtn.style.opacity = '0.7';
+            
+            // Simulate email sending (2 second delay)
+            setTimeout(() => {
+                // Hide form, show success message
+                form.style.display = 'none';
+                formSuccess.classList.add('active');
+                
+                // Set confirmation email
+                confirmationEmail.textContent = email;
+                
+                // Log the "sent" email (for demo purposes)
+                console.log('=== CONSULTATION REQUEST RECEIVED ===');
+                console.log('Name:', name);
+                console.log('Email:', email);
+                console.log('Subject:', subject);
+                console.log('Message:', message);
+                console.log('Sent to: ethanlim@globalvisionwealth.com');
+                console.log('=====================================');
+                
+                // In real implementation, this would send to backend
+                // fetch('/api/contact', { method: 'POST', body: formData })
+                
+            }, 2000);
+        }
+
+        // Reset Form
+        function resetForm() {
+            const form = document.getElementById('contactForm');
+            const formSuccess = document.getElementById('formSuccess');
+            const submitBtn = document.getElementById('submitBtn');
+            
+            form.reset();
+            form.style.display = 'flex';
+            formSuccess.classList.remove('active');
+            
+            submitBtn.textContent = 'Send Message';
+            submitBtn.disabled = false;
+            submitBtn.style.opacity = '1';
+        }
+
+        // Timeline Modal Functions
+        function openTimelineModal(index) {
+            console.log('Opening timeline modal:', index);
+            const data = timelineData[index];
+            if (!data) return;
+            
+            let modal = document.getElementById('timelineModalOverlay');
+            if (!modal) {
+                modal = document.createElement('div');
+                modal.id = 'timelineModalOverlay';
+                modal.className = 'philosophy-modal-overlay';
+                modal.onclick = function(event) {
+                    if (event.target === modal) closeTimelineModal();
+                };
+                modal.innerHTML = `
+                    <div class="philosophy-modal-content" onclick="event.stopPropagation()">
+                        <button class="philosophy-modal-close" onclick="closeTimelineModal()">×</button>
+                        <div class="philosophy-modal-header">
+                            <img id="timelineModalImg" src="" alt="" style="width:100%;height:100%;object-fit:cover;position:absolute;top:0;left:0;">
+                            <div style="position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(180deg,transparent 0%,rgba(15,23,42,0.95) 100%);"></div>
+                            <span class="modal-year-badge" id="timelineModalYear" style="position:absolute;top:2rem;left:2rem;background:rgba(201,169,98,0.95);color:#0f172a;padding:0.6rem 1.5rem;border-radius:30px;font-size:0.85rem;font-weight:700;letter-spacing:1.5px;z-index:2;box-shadow:0 10px 30px rgba(201,169,98,0.4);"></span>
+                        </div>
+                        <div class="philosophy-modal-body">
+                            <h3 class="philosophy-modal-title" id="timelineModalTitle"></h3>
+                            <p class="philosophy-modal-text" id="timelineModalDesc" style="margin-bottom:2.5rem;"></p>
+                            <div class="modal-grid" id="timelineModalGrid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-bottom:2.5rem;"></div>
+                            <div class="modal-section" id="timelineModalResponsibilities"></div>
+                            <div class="modal-section" id="timelineModalAchievements"></div>
+                            <div class="philosophy-modal-quote" id="timelineModalQuote" style="background:rgba(201,169,98,0.08);border-left:4px solid var(--accent-gold);padding:1.5rem 2rem;border-radius:0 8px 8px 0;margin-top:2rem;"></div>
+                        </div>
+                    </div>
+                `;
+                document.body.appendChild(modal);
+            }
+            
+            document.getElementById('timelineModalImg').src = data.image;
+            document.getElementById('timelineModalYear').textContent = data.year;
+            document.getElementById('timelineModalTitle').textContent = data.title;
+            document.getElementById('timelineModalDesc').textContent = data.description;
+            
+            const gridHtml = data.details.map(detail => `
+                <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:1.5rem;">
+                    <div style="color:var(--accent-gold);font-size:0.75rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:0.5rem;">${detail.label}</div>
+                    <div style="color:var(--text-light);font-size:0.95rem;line-height:1.6;">${detail.value}</div>
+                </div>
+            `).join('');
+            document.getElementById('timelineModalGrid').innerHTML = gridHtml;
+            
+            const respHtml = `
+                <div style="margin-bottom:2rem;">
+                    <h4 style="color:var(--accent-gold);font-size:0.8rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:1rem;padding-bottom:0.5rem;border-bottom:1px solid rgba(201,169,98,0.2);">Key Responsibilities</h4>
+                    <ul style="list-style:none;margin-top:1rem;">
+                        ${data.responsibilities.map(resp => `<li style="color:var(--text-muted);font-size:0.9rem;padding:0.6rem 0;padding-left:1.8rem;position:relative;line-height:1.6;"><span style="position:absolute;left:0;color:var(--accent-gold);font-weight:600;">▸</span>${resp}</li>`).join('')}
+                    </ul>
+                </div>
+            `;
+            document.getElementById('timelineModalResponsibilities').innerHTML = respHtml;
+            
+            const achieveHtml = `
+                <div style="margin-bottom:2rem;">
+                    <h4 style="color:var(--accent-gold);font-size:0.8rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:1rem;padding-bottom:0.5rem;border-bottom:1px solid rgba(201,169,98,0.2);">Key Achievements</h4>
+                    <ul style="list-style:none;margin-top:1rem;">
+                        ${data.achievements.map(ach => `<li style="color:var(--text-muted);font-size:0.9rem;padding:0.6rem 0;padding-left:1.8rem;position:relative;line-height:1.6;"><span style="position:absolute;left:0;color:var(--accent-gold);font-weight:600;">▸</span>${ach}</li>`).join('')}
+                    </ul>
+                </div>
+            `;
+            document.getElementById('timelineModalAchievements').innerHTML = achieveHtml;
+            
+            const quoteHtml = `<blockquote style="font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--text-light);font-style:italic;line-height:1.7;">"${data.quote}"</blockquote>`;
+            document.getElementById('timelineModalQuote').innerHTML = quoteHtml;
+            
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeTimelineModal() {
+            const modal = document.getElementById('timelineModalOverlay');
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        // Philosophy Modal Functions
+        function openPhilosophyModal(index) {
+            const data = philosophyData[index];
+            document.getElementById('modalPhilosophyIcon').innerHTML = data.icon;
+            document.getElementById('modalPhilosophyTitle').textContent = data.title;
+            document.getElementById('modalPhilosophySubtitle').textContent = data.subtitle;
+            document.getElementById('modalPhilosophyCore').textContent = data.core;
+            
+            const appHtml = data.application.map(app => `<li>${app}</li>`).join('');
+            document.getElementById('modalPhilosophyApplication').innerHTML = appHtml;
+            
+            document.getElementById('modalPhilosophyWhy').textContent = data.why;
+            document.getElementById('modalPhilosophyQuote').textContent = `"${data.quote}"`;
+            
+            document.getElementById('philosophyModalOverlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePhilosophyModal(event) {
+            if (event && event.target !== event.currentTarget) return;
+            document.getElementById('philosophyModalOverlay').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Expertise Modal Functions
+        function openExpertiseModal(index) {
+            console.log('Opening expertise modal:', index);
+            const data = expertiseData[index];
+            if (!data) return;
+            
+            let modal = document.getElementById('expertiseModalOverlay');
+            if (!modal) {
+                modal = document.createElement('div');
+                modal.id = 'expertiseModalOverlay';
+                modal.className = 'philosophy-modal-overlay';
+                modal.onclick = function(event) {
+                    if (event.target === modal) closeExpertiseModal();
+                };
+                modal.innerHTML = `
+                    <div class="philosophy-modal-content" onclick="event.stopPropagation()">
+                        <button class="philosophy-modal-close" onclick="closeExpertiseModal()">×</button>
+                        <div class="philosophy-modal-header">
+                            <h3 class="philosophy-modal-title" id="expertiseModalTitle"></h3>
+                            <p class="philosophy-modal-subtitle" id="expertiseModalSubtitle"></p>
+                        </div>
+                        <div class="philosophy-modal-body">
+                            <div class="philosophy-modal-section">
+                                <h4 class="philosophy-modal-section-title">Overview</h4>
+                                <p class="philosophy-modal-text" id="expertiseModalOverview"></p>
+                            </div>
+                            <div class="modal-grid" id="expertiseModalGrid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-bottom:2.5rem;"></div>
+                            <div class="modal-section">
+                                <h4 class="philosophy-modal-section-title">Key Expertise</h4>
+                                <ul class="philosophy-modal-list" id="expertiseModalExpertise"></ul>
+                            </div>
+                            <div class="philosophy-modal-quote" id="expertiseModalQuote" style="background:rgba(201,169,98,0.08);border-left:4px solid var(--accent-gold);padding:1.5rem 2rem;border-radius:0 8px 8px 0;margin-top:2rem;"></div>
+                        </div>
+                    </div>
+                `;
+                document.body.appendChild(modal);
+            }
+            
+            document.getElementById('expertiseModalTitle').textContent = data.title;
+            document.getElementById('expertiseModalSubtitle').textContent = data.subtitle;
+            document.getElementById('expertiseModalOverview').textContent = data.overview;
+            
+            const gridHtml = data.details.map(detail => `
+                <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:1.5rem;">
+                    <div style="color:var(--accent-gold);font-size:0.75rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:0.5rem;">${detail.label}</div>
+                    <div style="color:var(--text-light);font-size:0.95rem;line-height:1.6;">${detail.value}</div>
+                </div>
+            `).join('');
+            document.getElementById('expertiseModalGrid').innerHTML = gridHtml;
+            
+            const expertiseHtml = data.expertise.map(exp => `<li>${exp}</li>`).join('');
+            document.getElementById('expertiseModalExpertise').innerHTML = expertiseHtml;
+            
+            const quoteHtml = `<blockquote style="font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--text-light);font-style:italic;line-height:1.7;">"${data.quote}"</blockquote>`;
+            document.getElementById('expertiseModalQuote').innerHTML = quoteHtml;
+            
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeExpertiseModal() {
+            const modal = document.getElementById('expertiseModalOverlay');
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        // Contribution Modal Functions
+        function openContributionModal(index) {
+            console.log('Opening contribution modal:', index);
+            const data = contributionData[index];
+            if (!data) return;
+            
+            let modal = document.getElementById('contributionModalOverlay');
+            if (!modal) {
+                modal = document.createElement('div');
+                modal.id = 'contributionModalOverlay';
+                modal.className = 'philosophy-modal-overlay';
+                modal.onclick = function(event) {
+                    if (event.target === modal) closeContributionModal();
+                };
+                modal.innerHTML = `
+                    <div class="philosophy-modal-content" onclick="event.stopPropagation()">
+                        <button class="philosophy-modal-close" onclick="closeContributionModal()">×</button>
+                        <div class="philosophy-modal-header">
+                            <h3 class="philosophy-modal-title" id="contributionModalTitle"></h3>
+                            <p class="philosophy-modal-subtitle" id="contributionModalSubtitle"></p>
+                        </div>
+                        <div class="philosophy-modal-body">
+                            <div class="philosophy-modal-section">
+                                <h4 class="philosophy-modal-section-title">Overview</h4>
+                                <p class="philosophy-modal-text" id="contributionModalOverview"></p>
+                            </div>
+                            <div class="modal-grid" id="contributionModalGrid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-bottom:2.5rem;"></div>
+                            <div class="modal-section">
+                                <h4 class="philosophy-modal-section-title">Industry Impact</h4>
+                                <ul class="philosophy-modal-list" id="contributionModalImpact"></ul>
+                            </div>
+                            <div class="philosophy-modal-quote" id="contributionModalQuote" style="background:rgba(201,169,98,0.08);border-left:4px solid var(--accent-gold);padding:1.5rem 2rem;border-radius:0 8px 8px 0;margin-top:2rem;"></div>
+                        </div>
+                    </div>
+                `;
+                document.body.appendChild(modal);
+            }
+            
+            document.getElementById('contributionModalTitle').textContent = data.title;
+            document.getElementById('contributionModalSubtitle').textContent = data.subtitle;
+            document.getElementById('contributionModalOverview').textContent = data.overview;
+            
+            const gridHtml = data.details.map(detail => `
+                <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:1.5rem;">
+                    <div style="color:var(--accent-gold);font-size:0.75rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:0.5rem;">${detail.label}</div>
+                    <div style="color:var(--text-light);font-size:0.95rem;line-height:1.6;">${detail.value}</div>
+                </div>
+            `).join('');
+            document.getElementById('contributionModalGrid').innerHTML = gridHtml;
+            
+            const impactHtml = data.impact.map(imp => `<li>${imp}</li>`).join('');
+            document.getElementById('contributionModalImpact').innerHTML = impactHtml;
+            
+            const quoteHtml = `<blockquote style="font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--text-light);font-style:italic;line-height:1.7;">"${data.quote}"</blockquote>`;
+            document.getElementById('contributionModalQuote').innerHTML = quoteHtml;
+            
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeContributionModal() {
+            const modal = document.getElementById('contributionModalOverlay');
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        }
+
+        // Close modals with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeTimelineModal();
+                closePhilosophyModal();
+                closeExpertiseModal();
+                closeContributionModal();
+            }
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            const scrollProgress = document.getElementById('scrollProgress');
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            scrollProgress.style.width = scrollPercent + '%';
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Counter animation
+        function animateCounter(element) {
+            const target = parseInt(element.getAttribute('data-target'));
+            const duration = 2000;
+            const step = target / (duration / 16);
+            let current = 0;
+
+            const timer = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                    element.textContent = target + (target > 100 ? '' : '+');
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current);
+                }
+            }, 16);
+        }
+
+        // Intersection Observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    
+                    if (entry.target.classList.contains('stat-card')) {
+                        const numberEl = entry.target.querySelector('.stat-number');
+                        if (numberEl && numberEl.textContent === '0') {
+                            animateCounter(numberEl);
+                        }
+                    }
+                }
+            });
+        }, { threshold: 0.2 });
+
+        document.querySelectorAll('.timeline-item, .stat-card').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Mobile menu
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 968) {
+                document.querySelector('.nav-links').style.display = 'flex';
+            }
+        });
+    </script>
+</body>
 </html>
+
