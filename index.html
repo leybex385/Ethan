@@ -1378,67 +1378,73 @@
         }
 
         .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 4rem;
-            align-items: start;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
         .contact-info {
             padding: 2rem 0;
+            width: 100%;
+            text-align: center;
         }
 
         .contact-info h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
             color: var(--text-light);
             line-height: 1.3;
         }
 
         .contact-info>p {
             color: var(--text-muted);
-            margin-bottom: 2.5rem;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 3.5rem;
             line-height: 1.8;
-            font-size: 1rem;
         }
 
         .contact-methods {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            margin-bottom: 3rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 5rem;
         }
 
         .contact-method {
-            display: flex;
-            align-items: flex-start;
-            gap: 1.2rem;
-            padding: 1.2rem;
             background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 8px;
-            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            transition: all 0.4s ease;
             cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
         }
 
         .contact-method:hover {
-            background: rgba(255, 255, 255, 0.05);
-            border-color: rgba(201, 169, 98, 0.3);
-            transform: translateX(5px);
+            background: rgba(255, 255, 255, 0.06);
+            border-color: var(--accent-gold);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), var(--glow-gold);
         }
 
         .contact-method-icon {
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             background: rgba(201, 169, 98, 0.15);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--accent-gold);
-            font-size: 1.3rem;
-            flex-shrink: 0;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
             transition: all 0.3s ease;
         }
 
@@ -1480,23 +1486,25 @@
         /* Location Cards */
         .locations-section {
             margin-top: 2rem;
+            margin-bottom: 4rem;
         }
 
         .locations-section h4 {
             color: var(--accent-gold);
-            font-size: 0.85rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
             font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid rgba(201, 169, 98, 0.2);
+            letter-spacing: 1px;
+            text-transform: none;
+            margin-bottom: 2.5rem;
+            padding-bottom: 0;
+            border-bottom: none;
         }
 
         .location-cards {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
+            gap: 2rem;
         }
 
         .location-card {
@@ -2629,78 +2637,6 @@
                     </div>
                 </div>
 
-                <!-- Contact Form Side -->
-                <div class="contact-form-wrapper">
-                    <div class="form-header">
-                        <h4>Send a Message</h4>
-                        <p>Fill out the form below and I will respond within 24-48 hours.</p>
-                    </div>
-
-                    <!-- Form -->
-                    <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
-                        <div class="form-group">
-                            <label for="name">Full Name *</label>
-                            <input type="text" id="name" name="name" required placeholder="John Doe">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" required placeholder="john@example.com">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="phone">Phone Number (Optional)</label>
-                            <input type="tel" id="phone" name="phone" placeholder="+65 9123 4567">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="subject">Subject *</label>
-                            <select id="subject" name="subject" required>
-                                <option value="">Select a topic</option>
-                                <option value="investment">Investment Inquiry</option>
-                                <option value="consultation">Strategic Consultation</option>
-                                <option value="partnership">Partnership Discussion</option>
-                                <option value="media">Media Inquiry</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">Message *</label>
-                            <textarea id="message" name="message" required
-                                placeholder="Please describe your inquiry..."></textarea>
-                        </div>
-
-                        <div class="form-submit">
-                            <button type="submit" class="btn btn-primary" id="submitBtn">
-                                Send Message
-                            </button>
-                        </div>
-                    </form>
-
-                    <!-- Success Message -->
-                    <div class="form-success" id="formSuccess">
-                        <div class="success-icon">✓</div>
-                        <h4>Message Sent Successfully!</h4>
-                        <p>
-                            Thank you for reaching out. Your consultation request has been received
-                            and will be reviewed shortly.
-                        </p>
-                        <div class="form-success-email">
-                            📧 A confirmation email will be sent to:<br>
-                            <strong id="confirmationEmail"></strong>
-                        </div>
-                        <p style="font-size: 0.85rem; color: var(--text-muted);">
-                            Expected response time: 24-48 hours<br>
-                            For urgent matters, please email directly at<br>
-                            <a href="mailto:ethanlim@globalvisionwealth.com"
-                                style="color: var(--accent-gold);">ethanlim@globalvisionwealth.com</a>
-                        </p>
-                        <button class="btn" onclick="resetForm()" style="margin-top: 1.5rem;">
-                            Send Another Message
-                        </button>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -3076,64 +3012,16 @@
             }
         }
 
-        // Form Submission Handler - FIXED
-        function handleSubmit(event) {
-            event.preventDefault();
-
-            const form = document.getElementById('contactForm');
-            const submitBtn = document.getElementById('submitBtn');
-            const formSuccess = document.getElementById('formSuccess');
-            const confirmationEmail = document.getElementById('confirmationEmail');
-
-            // Get form data
-            const formData = new FormData(form);
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const subject = formData.get('subject');
-            const message = formData.get('message');
-
-            // Show loading state
-            submitBtn.textContent = 'Sending...';
-            submitBtn.disabled = true;
-            submitBtn.style.opacity = '0.7';
-
-            // Simulate email sending (2 second delay)
-            setTimeout(() => {
-                // Hide form, show success message
-                form.style.display = 'none';
-                formSuccess.classList.add('active');
-
-                // Set confirmation email
-                confirmationEmail.textContent = email;
-
-                // Log the "sent" email (for demo purposes)
-                console.log('=== CONSULTATION REQUEST RECEIVED ===');
-                console.log('Name:', name);
-                console.log('Email:', email);
-                console.log('Subject:', subject);
-                console.log('Message:', message);
-                console.log('Sent to: ethanlim@globalvisionwealth.com');
-                console.log('=====================================');
-
-                // In real implementation, this would send to backend
-                // fetch('/api/contact', { method: 'POST', body: formData })
-
-            }, 2000);
-        }
-
-        // Reset Form
-        function resetForm() {
-            const form = document.getElementById('contactForm');
-            const formSuccess = document.getElementById('formSuccess');
-            const submitBtn = document.getElementById('submitBtn');
-
-            form.reset();
-            form.style.display = 'flex';
-            formSuccess.classList.remove('active');
-
-            submitBtn.textContent = 'Send Message';
-            submitBtn.disabled = false;
-            submitBtn.style.opacity = '1';
+        // Open Location Map
+        function openLocationMap(location) {
+            const locations = {
+                singapore: 'https://www.google.com/maps/search/Singapore+Financial+District',
+                hongkong: 'https://www.google.com/maps/search/Hong+Kong+Central',
+                newyork: 'https://www.google.com/maps/search/New+York+Wall+Street'
+            };
+            if (locations[location]) {
+                window.open(locations[location], '_blank');
+            }
         }
 
         // Timeline Modal Functions
