@@ -261,7 +261,7 @@
             align-items: center;
             position: relative;
             overflow: hidden;
-            padding-top: 80px;
+            padding-top: 120px;
             background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 58, 95, 0.9) 100%),
                 url('https://image.qwenlm.ai/public_source/32f357c9-d67e-416f-9ad3-ed287c1facc4/113f98b38-947e-4119-90e1-19ac9784fd76.png') center/cover fixed;
         }
@@ -282,7 +282,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
-            align-items: center;
+            align-items: flex-start;
             position: relative;
             z-index: 1;
         }
@@ -301,7 +301,7 @@
         .hero-image-wrapper {
             position: relative;
             width: 100%;
-            max-width: 450px;
+            max-width: 600px;
         }
 
         .hero-image-wrapper::before {
@@ -319,6 +319,9 @@
 
         .hero-image img {
             width: 100%;
+            height: auto;
+            aspect-ratio: 1/1;
+            object-fit: cover;
             border-radius: 4px;
             box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4), 0 0 60px rgba(201, 169, 98, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -2089,7 +2092,7 @@
                 <div class="hero-image-wrapper">
                     <img src="images/profile_standing.png"
                          alt="Ethan Lim (Lim Macheng) – Founder & Chief Investment Officer at GlobalVision Capital"
-                         width="450" height="600" loading="eager">
+                         loading="eager">
                 </div>
             </div>
         </div>
